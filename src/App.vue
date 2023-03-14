@@ -1,50 +1,151 @@
 <script setup>
-import { ref } from 'vue';
+import { ref } from "vue";
+const name = ref("");
+const password = ref("");
+const confirmPassword = ref("");
+const modelUsername = ref('')
+const modelPassLogin = ref('')
 
-import login from './components/Login.vue'
-import signup from './components/signUp.vue'
+const signIns = {
+  userName: [],
+  passWords: [],
+  confirmPass: []
+};
+const saveSignup = () => {
+  if (password.value === confirmPassword.value) {
+    signIns.userName.push(name.value);
+    signIns.passWords.push(password.value);
+    signIns.confirmPass.push(confirmPassword.value);
+  } else  {
+    alert("password and confirmpassword not agree");
+  }
+  console.log(`userName : ${signIns.userName}`);
+console.log(`Password : ${signIns.passWords}`);
+console.log(`ConfirmPass : ${signIns.confirmPass}`);
+};
 
-let popupTriggers = ref({
-  loginTrigger : ref(false),
-  signUpTrigger : ref(false)
-})
-
-const TogglePopup = (trigger) => {
-  popupTriggers.value[trigger] = !popupTriggers.value[trigger]
-}
-
-const signUpNow = () => {
-  popupTriggers.loginTrigger = false
-  popupTriggers.signUpTrigger = true
+const saveLogin = ()=>{
+  if(signIns.userName.includes(modelUsername.value) && signIns.passWords.includes(modelPassLogin.value)){
+    alert('can login')
+  }
+  else{
+    alert("username or password not correct or you does'have any account")
+  }
 }
 
 </script>
- 
 <template>
-  <div class="relative h-screen font-serif">
-    <div class="flex h-screen bg-[#659DBD]  items-center justify-center text-center ">
-      <div class="text-white">
-        <h1 class="underline text-2xl pb-9">sec 2</h1>
-        <h1 class="text-8xl font-bold pb-16">MaiRuDuRai</h1>
-        <button @click="()=>TogglePopup('loginTrigger')" class="bg-[#BC986A] w-96 h-16 rounded-full border border-white text-3xl active:scale-105 ease-in-out duration-300 hover:text-[#BC986A] hover:bg-[#FBEEC1]">LOG IN</button>
-      </div>
-    </div>
-    
-    <login v-if="popupTriggers.loginTrigger" :TogglePopup="()=>TogglePopup('loginTrigger')">
-      
-    </login>
-    <signup v-if="popupTriggers.signUpTrigger" :TogglePopup="()=>TogglePopup('signUpTrigger')">
+  Name : {{ name }}<br />
+  Password : {{ password }}<br />
+  ConfirmPassword : {{ confirmPassword }}<br>
 
-    </signup>
-    
-    <div class="flex bg-[#FBEEC1] h-20 p-2 items-center justify-center absolute inset-x-0 bottom-0 ">
-      <h1 class="text-3xl text-[#8D8741]">- MaiRuName -</h1>
-      <button @click="()=>TogglePopup('signUpTrigger')" class="absolute right-5 bg-[#BC986A] rounded-full border-2 border-[#BC986A] w-28 h-11 text-2xl text-white active:scale-105 ease-in-out duration-300 hover:text-[#BC986A] hover:bg-[#FBEEC1] hover:border-[#659DBD] hover:border-2">Sign Up</button>
-    </div>
+  Username : {{ modelUsername }}<br>
+  Password : {{ modelPassLogin }}
+  <!-- <br>
+  Show saveName : {{ saveName }}<br>
+  Show savePassword : {{ savePassword }} -->
+  <div class="container">
+    <form class="form" @submit.prevent="handleSubmit">
+      <label class="form-label" for="name">Name</label>
+      <input class="form-input" type="text" id="name" v-model="name" />
+      <label class="form-label" for="password">Password</label>
+      <input
+        class="form-input"
+        type="password"
+        id="password"
+        v-model="password"
+      />
+      <label class="form-label" for="ConfirmPassword">Confirm Password</label>
+      <input
+        class="form-input"
+        type="password"
+        id="confirmPassword"
+        v-model="confirmPassword"
+      />
+      <button @click="saveSignup()" class="form-submit" type="summit">
+        Sign in
+      </button>
+    </form>
   </div>
 
-</template>
- 
-<style >
 
+  <form class="form" @submit.prevent="handleSubmit">
+      <label class="form-label" for="userName">Name</label>
+      <input class="form-input" type="text" id="userName" v-model="modelUsername" />
+      
+      <label class="form-label" for="passwordLogin">Password</label>
+      <input
+        class="form-input"
+        type="password"
+        id="passwordLogin"
+        v-model="modelPassLogin"
+      />
+      <button @click="saveLogin" class="form-submit" type="summit">
+        Login
+      </button>
+    </form>
+  
+</template>
+
+<style scoped>
+/* Center the container on the screen */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: auto;
+  background-color: #f7fafc;
+}
+
+/* Style the form */
+.form {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  padding: 2rem;
+  max-width: 28rem;
+  width: 100%;
+}
+
+/* Style the form header */
+.form h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/* Style the form inputs */
+.form-label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.form-input {
+  border-color: #e2e8f0;
+  border-width: 1px;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+/* Style the form submit button */
+.form-submit {
+  background-color: #4299e1;
+  border-color: #4299e1;
+  border-radius: 0.25rem;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.form-submit:hover {
+  background-color: #3182ce;
+}
 </style>
