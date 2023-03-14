@@ -1,7 +1,6 @@
 <script setup>
 import { ref } from 'vue';
 import Login from './components/Login.vue'
-
 let showLogin = ref(false)
 let showSignUp = ref(false)
 </script>
@@ -18,7 +17,7 @@ let showSignUp = ref(false)
 
   <div class="flex bg-[#FBEEC1] h-20 p-2 items-center justify-center absolute inset-x-0 bottom-0 ">
     <h1 class="text-3xl text-[#8D8741]">- MaiRuName -</h1>
-    <button @click="showSignUp = !showSignUp" class="absolute right-5 bg-[#BC986A] rounded-full border-2 border-[#BC986A] w-28 h-11 text-2xl text-white active:scale-105 ease-in-out duration-300 hover:text-[#BC986A] hover:bg-[#FBEEC1] hover:border-[#659DBD] hover:border-2">Sign Up</button>
+      <button @click="showSignUp = !showSignUp" class="absolute right-5 bg-[#BC986A] rounded-full border border-white w-28 h-11 text-2xl text-white active:scale-105 ease-in-out duration-300">Sign Up</button>
   </div>
 </div>
 
