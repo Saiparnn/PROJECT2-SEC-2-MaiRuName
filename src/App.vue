@@ -13,10 +13,6 @@ const TogglePopup = (trigger) => {
   popupTriggers.value[trigger] = !popupTriggers.value[trigger]
 }
 
-const signUpNow = () => {
-  popupTriggers.loginTrigger = false
-  popupTriggers.signUpTrigger = true
-}
 
 </script>
  
