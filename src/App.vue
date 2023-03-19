@@ -1,37 +1,56 @@
 <script setup>
-import { ref } from "vue";
+import { ref,onBeforeMount, onBeforeUpdate, onMounted, onUpdated  } from "vue";
+import getUser from './composable/getUserPass.js'
 const name = ref("");
 const password = ref("");
 const confirmPassword = ref("");
 const modelUsername = ref('')
 const modelPassLogin = ref('')
+const loginData = ref([])
 
-const signIns = {
-  userName: [],
-  passWords: [],
-  confirmPass: []
-};
-const saveSignup = () => {
-  if (password.value === confirmPassword.value) {
-    signIns.userName.push(name.value);
-    signIns.passWords.push(password.value);
-    signIns.confirmPass.push(confirmPassword.value);
-  } else  {
-    alert("password and confirmpassword not agree");
-  }
-  console.log(`userName : ${signIns.userName}`);
-console.log(`Password : ${signIns.passWords}`);
-console.log(`ConfirmPass : ${signIns.confirmPass}`);
-};
+onUpdated (async () => { // ใข้ onupdate เพือจะได้สามารถ login ได้ทันทีเลยเมื่อมีการเพิมค่า user ใน object
+  loginData.value = await getUser(); // ทำการใส่ค่า object เข้าไปใน loginData โดยใช้การเรียกใช้ฟังก์ชั่น getUser() ที่มีการ return ค่า
+});
 
-const saveLogin = ()=>{
-  if(signIns.userName.includes(modelUsername.value) && signIns.passWords.includes(modelPassLogin.value)){
-    alert('can login')
+const updateUser = async () => {
+  
+  if(name.value !== '' && password.value !== '' && confirmPassword.value !== ''){
+  try {
+    const res = await fetch(`http://localhost:5000/infoOfSignup`, {
+      method: "POST",
+      headers: { 'Content-Type': 'application/json' }, // แปลงข้อมูลที่ส่งไปให้กลายเป็น json ปกติ key: value json = "key":value
+      body: JSON.stringify({
+        userName: name.value,
+        password: password.value
+      })
+    });
+   
+    if (res.ok) {
+      console.log('Add success');
+    }
+     else {
+      throw new Error('cannot Add')
+    }
   }
-  else{
-    alert("username or password not correct or you does'have any account")
-  }
+   catch (error) {
+    console.log(`Error: ${error}`);
+   }
 }
+};
+
+const saveLogin = async () => {
+  if(modelUsername.value != '' && modelPassLogin.value != '')
+  try {
+    const foundUser = loginData.value.find(user => user.userName === modelUsername.value && user.password === modelPassLogin.value);
+    if (foundUser) {
+      console.log('login successfull');
+    } else {
+      throw new Error('Username or password is incorrect.')
+    }
+  } catch (error) {
+    console.log(`Error: ${error}`);
+  }
+};
 
 </script>
 <template>
@@ -39,13 +58,11 @@ const saveLogin = ()=>{
   Password : {{ password }}<br />
   ConfirmPassword : {{ confirmPassword }}<br>
 
-  Username : {{ modelUsername }}<br>
-  Password : {{ modelPassLogin }}
-  <!-- <br>
-  Show saveName : {{ saveName }}<br>
-  Show savePassword : {{ savePassword }} -->
-  <div class="container">
-    <form class="form" @submit.prevent="handleSubmit">
+  <!-- Username : {{ modelUsername }}<br>
+  Password : {{ modelPassLogin }} -->
+
+  <div class="container" >
+    <div class="form" >
       <label class="form-label" for="name">Name</label>
       <input class="form-input" type="text" id="name" v-model="name" />
       <label class="form-label" for="password">Password</label>
@@ -62,14 +79,14 @@ const saveLogin = ()=>{
         id="confirmPassword"
         v-model="confirmPassword"
       />
-      <button @click="saveSignup()" class="form-submit" type="summit">
+      <button @click=" updateUser "  class="form-submit" type="summit">
         Sign in
       </button>
-    </form>
+    </div>
   </div>
 
 
-  <form class="form" @submit.prevent="handleSubmit">
+  <div class="form" >
       <label class="form-label" for="userName">Name</label>
       <input class="form-input" type="text" id="userName" v-model="modelUsername" />
       
@@ -83,7 +100,7 @@ const saveLogin = ()=>{
       <button @click="saveLogin" class="form-submit" type="summit">
         Login
       </button>
-    </form>
+    </div>
   
 </template>
 
