@@ -1,18 +1,30 @@
 <script setup>
+import {onMounted, ref} from "vue";
+import {getMovies} from "@/composable/getMovies";
 
+  const movies = ref([])
+  onMounted(async () => {
+    movies.value = await getMovies()
+    console.log(movies.value)
+  })
 </script>
 
 <template>
-  <div>
-    <img src="@/assets/images/avengers.jpeg" class="hover:opacity-80 transition easy-in-out duration-150"/>
-    <h3>Avengers</h3>
-    <div>
-      Director | December 6 2022 <br />
-    </div>
-    <span class="text-sm text-gray-500">
-      Action Adventure Fantasy Sci-Fi
+  <div v-for="movie in movies" :key="movie.id">
+    <img src="@/assets/images/avatar.jpeg" class="hover:opacity-80 transition easy-in-out duration-150 rounded-lg"/>
+<!--        <img src="{{ movie.image }}" class="hover:opacity-80 transition easy-in-out duration-150"/>-->
+<!--    <img :src="require(`${movie.image}`)" class="hover:opacity-80 transition easy-in-out duration-150 rounded-lg"/>-->
+<!--      <div class="hover:opacity-80 transition easy-in-out duration-150">-->
+<!--        {{ movie.image }}-->
+<!--      </div>-->
+      <h2 class="text-white font-bold">{{ movie.name }}</h2>
+      <div class="text-white">
+        {{ movie.director }} | {{ movie.releaseDate }} <br />
+      </div>
+      <span class="text-sm text-white">
+      {{ movie.category }}
     </span>
-  </div>
+    </div>
 </template>
 
 <style scoped>
