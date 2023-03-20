@@ -1,6 +1,6 @@
 const getMovies = async () => {
     try {
-        const res = await fetch('http://localhost:3000/movie')
+        const res = await fetch('http://localhost:3000/movies')
         if (res.status === 200) {
             const movies = await res.json()
             return movies
