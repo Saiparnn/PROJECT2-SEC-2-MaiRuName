@@ -1,0 +1,324 @@
+{
+  "movies": [
+    {
+      "id":"1",
+      "image": "<https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSmGggtpJ4TX3aN3PUaVWUgNODHespRPvKYAyhGUAZSqSOmPiEm>",
+      "name":"Avatar: The Way of Water",
+      "category":"Action, Adventure, Fantasy, Sci-Fi",
+      "storyLine":"Jake Sully lives with his newfound family formed on the extrasolar moon Pandora. Once a familiar threat returns to finish what was previously started, Jake must work with Neytiri and the army of the Na'vi race to protect their home.",
+      "director":"James Cameron",
+      "writer":"James Cameron, Rick Jaffa, Amanda Silver , Josh Friedman , Shane Salerno",
+      "star":"Sam Worthington , Zoe Saldana , Sigourney Weaver",
+      "releaseDate":"December 6 2022"
+    },
+    {
+      "id":"2",
+      "image":"",
+      "name":"Titanic",
+      "category":"Drama, Romance",
+      "storyLine":"84 years later, a 100 year-old woman named Rose DeWitt Bukater tells the story to her granddaughter Lizzy Calvert, Brock Lovett, Lewis Bodine, Bobby Buell and Anatoly Mikailavich on the Keldysh about her life set in April 10th 1912, on a ship called Titanic when young Rose boards the departing ship with the upper-class passengers and her mother, Ruth DeWitt Bukater, and her fiancé, Caledon Hockley. Meanwhile, a drifter and artist named Jack Dawson and his best friend Fabrizio De Rossi win third-class tickets to the ship in a game. And she explains the whole story from departure until the death of Titanic on its first and last voyage April 15th, 1912 at 2:20 in the morning.",
+      "director":"James Cameron",
+      "writer":"James Cameron",
+      "star":"Leonardo DiCaprio, Kate Winslet, Billy Zane",
+      "releaseDate":"November 1 1997"
+    },
+    {
+      "id":"3",
+      "image":"",
+      "name":"Interstellar",
+      "category":"Advanture, Drama, Sci-Fi",
+      "storyLine":"Earth's future has been riddled by disasters, famines, and droughts. There is only one way to ensure mankind's survival: Interstellar travel. A newly discovered wormhole in the far reaches of our solar system allows a team of astronauts to go where no man has gone before, a planet that may have the right environment to sustain human life.",
+      "director":"Christopher Nolan",
+      "writer":"Jonathan Nolan, Christopher Nolan",
+      "star":"Matthew McConaughey, Ellen Burstyn, Mackenzie Foy, Jessica Chastain",
+      "releaseDate":"November 7 2014"
+    },
+    {
+      "id":"4",
+      "image":"",
+      "name":"Inception",
+      "category":"Action, Adventurn, Sci-Fi, Thriller",
+      "storyLine":"Dom Cobb is a skilled thief, the absolute best in the dangerous art of extraction, stealing valuable secrets from deep within the subconscious during the dream state, when the mind is at its most vulnerable. Cobb's rare ability has made him a coveted player in this treacherous new world of corporate espionage, but it has also made him an international fugitive and cost him everything he has ever loved. Now Cobb is being offered a chance at redemption. One last job could give him his life back but only if he can accomplish the impossible, inception. Instead of the perfect heist, Cobb and his team of specialists have to pull off the reverse: their task is not to steal an idea, but to plant one. If they succeed, it could be the perfect crime. But no amount of careful planning or expertise can prepare the team for the dangerous enemy that seems to predict their every move. An enemy that only Cobb could have seen coming.",
+      "director":"Christopher Nolan",
+      "writer":"Christopher Nolan",
+      "star":"Leonardo DiCaprio, Joseph Gordon-Levitt , Elliot Page, Tom Hardy, Cillian Murphy",
+      "releaseDate":"July 16 2010"
+    },
+    {
+      "id":"5",
+      "image":"",
+      "name":"Joker(2019)",
+      "category":"Crime, Drama, Thriller",
+      "storyLine":"A socially inept clown for hire - Arthur Fleck aspires to be a stand up comedian among his small job working dressed as a clown holding a sign for advertising. He takes care of his mother- Penny Fleck, and as he learns more about his mental illness, he learns more about his past. Dealing with all the negativity and bullying from society he heads downwards on a spiral, in turn showing how his alter ego Joker, came to be.",
+      "director":"Todd Phillips",
+      "writer":"Todd Phillips, Scott Silver, Bob Kane",
+      "star":"Joaquin Phoenix, Robert De Niro, Zazie Beetz",
+      "releaseDate":"October 4 2019"
+    },
+    {
+      "id":"6",
+      "image":"",
+      "name":"Parasite",
+      "category":"Drama, Thriller",
+      "storyLine":"The Kims - mother and father Chung-sook and Ki-taek, and their young adult offspring, son Ki-woo and daughter Ki-jung - are a poor family living in a shabby and cramped half basement apartment in a busy lower working class commercial district of Seoul. Without even knowing it, they, especially Mr. and Mrs. Kim, literally smell of poverty. Often as a collective, they perpetrate minor scams to get by, and even when they have jobs, they do the minimum work required. Ki-woo is the one who has dreams of getting out of poverty by one day going to university. Despite not having that university education, Ki-woo is chosen by his university student friend Min, who is leaving to go to school, to take over his tutoring job to Park Da-hye, who Min plans to date once he returns to Seoul and she herself is in university. The Parks are a wealthy family who for four years have lived in their modernistic house designed by and the former residence of famed architect Namgoong. While Mr. and Mrs. Park are all about status, Mrs. Park has a flighty, simpleminded mentality and temperament, which Min tells Ki-woo to feel comfortable in lying to her about his education to get the job. In getting the job, Ki-woo further learns that Mrs. Park is looking for an art therapist for the Parks' adolescent son, Da-song, Ki-woo quickly recommending his professional art therapist friend Jessica, really Ki-jung who he knows can pull off the scam in being the easiest liar of the four Kims. In Ki-woo also falling for Da-hye, he begins to envision himself in that house, and thus the Kims as a collective start a plan for all the Kims, like Ki-jung using assumed names, to replace existing servants in the Parks' employ in orchestrating reasons for them to be fired. The most difficult to get rid of may be Moon-gwang, the Parks' housekeeper who literally came with the house - she Namgoong's housekeeper when he lived there - and thus knows all the little nooks and crannies of it better than the Parks themselves. The question then becomes how far the Kims can take this scam in their quest to become their version of the Parks. ",
+      "director":"Bong Joon Ho",
+      "writer":"Bong Joon Ho, Han Jin-won",
+      "star":"Song Kang-ho, Lee Sun-kyun, Cho Yeo-jeong",
+      "releaseDate":"November 8 2019"
+    },
+    {
+      "id":"7",
+      "image":"",
+      "name":"Forrest Gump",
+      "category":"Drama, Romance",
+      "storyLine":"Forrest Gump is a simple man with a low I.Q. but good intentions. He is running through childhood with his best and only friend Jenny. His 'mama' teaches him the ways of life and leaves him to choose his destiny. Forrest joins the army for service in Vietnam, finding new friends called Dan and Bubba, he wins medals, creates a famous shrimp fishing fleet, inspires people to jog, starts a ping-pong craze, creates the smiley, writes bumper stickers and songs, donates to people and meets the president several times. However, this is all irrelevant to Forrest who can only think of his childhood sweetheart Jenny Curran, who has messed up her life. Although in the end all he wants to prove is that anyone can love anyone.",
+      "director":"Robert Zemeckis",
+      "writer":"Winston Groom, Eric Roth",
+      "star":"Tom Hanks, Robin Wright,Gary Sinise",
+      "releaseDate":"July 6 1994"
+    },
+    {
+      "id":"8",
+      "image":"",
+      "name":"The Dark Knight",
+      "category":"Action, Crime, Drama, Thriller",
+      "storyLine":"Set within a year after the events of Batman Begins (2005), Batman, Lieutenant James Gordon, and new District Attorney Harvey Dent successfully begin to round up the criminals that plague Gotham City, until a mysterious and sadistic criminal mastermind known only as The Joker appears in Gotham, creating a new wave of chaos. Batman's struggle against The Joker becomes deeply personal, forcing him to confront everything he believes and improve his technology to stop him. A love triangle develops between Bruce Wayne, Dent, and Rachel Dawes.",
+      "director":"Jonathan Nolan, Christopher Nolan",
+      "writer":"Christopher Nolan, David S. Goyer",
+      "star":"Christian Bale, Heath Ledger, Michael Caine",
+      "releaseDate":"July 18 2008"
+    },
+    {
+      "id":"9",
+      "image":"",
+      "name":"The Blind Side",
+      "category":"Biography, Drama, Sport",
+      "storyLine":"Based on the true story of Leigh Anne Tuohy and Sean Tuohy who take in a homeless teenage African-American, Michael Oher. Michael has no idea who his father is and his mother is a drug addict. Michael has had little formal education and few skills to help him learn. Leigh Anne soon takes charge however, as is her nature, ensuring that the young man has every opportunity to succeed. When he expresses an interest in football, she goes all out to help him, including giving the coach a few ideas on how best to use Michael's skills. They not only provide him with a loving home, but hire a tutor to help him improve his grades to the point where he would qualify for an NCAA Division I athletic scholarship. Michael Oher was the first-round pick of the Baltimore Ravens in the 2009 NFL draft.",
+      "director":"John Lee Hancock",
+      "writer":"John Lee Hancock, Michael Lewis",
+      "star":"Quinton Aaron, Tim McGraw, Sandra Bullock",
+      "releaseDate":"November 20 2009"
+    },
+    {
+      "id":"10",
+      "image":"",
+      "name":"Conjuring",
+      "category":"Drama, Horror, Mystery",
+      "storyLine":"A sleep study goes awry when participants start to go missing.",
+      "director":"Calvin Morie McCarthy",
+      "writer":"Calvin Morie McCarthy",
+      "star":"Victoria Grace Borrello, Steve Larkin, Jon Meggison",
+      "releaseDate":"July 10 2022"
+    },
+    {
+      "id":"11",
+      "image":"",
+      "name":"The Conjuring 2",
+      "category":"Horror, Mystery, Thriller",
+      "storyLine":"In 1977, paranormal investigators Ed and Lorraine Warren travel to London, England, where single mother Peggy Hodgson believes that something evil is in her home. When Peggy's youngest daughter starts showing signs of demonic possession, Ed and Lorraine attempt to help the besieged girl, only to find themselves targeted by the malicious spirits.",
+      "director":"James Wan",
+      "writer":"Chad Hayes, Carey W. Hayes, James Wan, David Leslie, Johnson-McGoldrick",
+      "star":"Patrick Wilson, Vera Farmiga, Madison Wolfe, Frances O'Connor",
+      "releaseDate":"June 10 2016"
+    },
+    {
+      "id":"12",
+      "image":"The Visitor",
+      "name":"The Visitor",
+      "category":"Drama, Horror, Mystery, Thriller",
+      "storyLine":"After a series of tragedies, Robert moves with his wife back to her childhood home. After he discovers an old portrait of a man who looks like him, he goes down a rabbit hole to discover the identity of this mysterious doppelganger.",
+      "director":"Justin P. Lange",
+      "writer":"Simon BoyesAdam, Mason",
+      "star":"Finn Jones, Jessica Mcnamee, Thomas Francis Murphy, Dane Rhodes",
+      "releaseDate":"July 10 2022"
+    },
+    {
+      "id":"13",
+      "image":"",
+      "name":"Jurassic Park",
+      "category":"Action, Adventure, Sci-Fi, Thriller",
+      "storyLine":"Huge advancements in scientific technology have enabled a mogul to create an island full of living dinosaurs. John Hammond has invited four individuals, along with his two grandchildren, to join him at Jurassic Park. But will everything go according to plan? A park employee attempts to steal dinosaur embryos, critical security systems are shut down and it now becomes a race for survival with dinosaurs roaming freely over the island.",
+      "director":"Steven Spielberg",
+      "writer":"Michael Crichton, David Koepp",
+      "star":"Sam Neill, Laura Dern,Jeff Goldblum, Ricahard Attenborough",
+      "releaseDate":"June 11 1993"
+    },
+    {
+      "id":"14",
+      "image":"",
+      "name":"Indiana Jones and the Last Crusade",
+      "category":"Action, Adventure",
+      "storyLine":"An art collector appeals to Indiana Jones to embark on a search for the Holy Grail. He learns that another archaeologist has disappeared while searching for the precious goblet, and the missing man is his own father, Dr. Henry Jones. The artifact is much harder to find than they expected, and its powers are too much for those impure of heart.",
+      "director":"Steven Spielberg",
+      "writer":"Jeffrey Boam, George Lucas, Menno Meyjes",
+      "star":"Harrison Ford, Sean Connery, Denholm Elliott, Alison Doody",
+      "releaseDate":"May 24 1989"
+    },
+    {
+      "id":"15",
+      "image":"",
+      "name":"Jaws",
+      "category":"Adventure, Thriller",
+      "storyLine":"It's a hot summer on Amity Island, a small community whose main business is its beaches. When new Sheriff Martin Brody discovers the remains of a shark attack victim, his first inclination is to close the beaches to swimmers. This doesn't sit well with Mayor Larry Vaughn and several of the local businessmen. Brody backs down to his regret as that weekend a young boy is killed by the predator. The dead boy's mother puts out a bounty on the shark and Amity is soon swamped with amateur hunters and fisherman hoping to cash in on the reward. A local fisherman with much experience hunting sharks, Quint, offers to hunt down the creature for a hefty fee. Soon Quint, Brody and Matt Hooper from the Oceanographic Institute are at sea hunting the Great White shark. As Brody succinctly surmises after their first encounter with the creature, they're going to need a bigger boat.",
+      "director":"Steven Spielberg",
+      "writer":"Peter Benchley, Carl Gottlieb",
+      "star":"Roy Scheider, Robert Shaw, Richard Dreyfuss, Lorraine Gary, Murray Hamilton",
+      "releaseDate":"June 20 1975"
+    },
+    {
+      "id":"16",
+      "image":"",
+      "name":"Die Hard",
+      "category":"Action, Thriller",
+      "storyLine":"NYPD cop John McClane goes on a Christmas vacation to visit his wife Holly in Los Angeles where she works for the Nakatomi Corporation. While they are at the Nakatomi headquarters for a Christmas party, a group of robbers led by Hans Gruber take control of the building and hold everyone hostage, with the exception of John, while they plan to perform a lucrative heist. Unable to escape and with no immediate police response, John is forced to take matters into his own hands.",
+      "director":"John McTiernan",
+      "writer":"Roderick Thorp, Jeb Stuart, Steven E. de Souza",
+      "star":"Bruce Willis, Alan Rickman, Bonnie Bedelia",
+      "releaseDate":"July 20 1988"
+    },
+    {
+      "id":"17",
+      "image":"",
+      "name":"The Shawshank Redemption",
+      "category":"Drama",
+      "storyLine":"Chronicles the experiences of a formerly successful banker as a prisoner in the gloomy jailhouse of Shawshank after being found guilty of a crime he did not commit. The film portrays the man's unique way of dealing with his new, torturous life; along the way he befriends a number of fellow prisoners, most notably a wise long-term inmate named Red.",
+      "director":"Frank Darabont",
+      "writer":"Stephen King, Frank Darabont",
+      "star":"Tim Robbins, Morgan Freeman, Bob Gunton, William Sadler",
+      "releaseDate":"October 14 1994"
+    },
+    {
+      "id":"18",
+      "image":"",
+      "name":"The Godfather",
+      "category":"Crime, Drama",
+      "storyLine":"The Godfather Don Vito Corleone is the head of the Corleone mafia family in New York. He is at the event of his daughter's wedding. Michael, Vito's youngest son and a decorated WW II Marine is also present at the wedding. Michael seems to be uninterested in being a part of the family business. Vito is a powerful man, and is kind to all those who give him respect but is ruthless against those who do not. But when a powerful and treacherous rival wants to sell drugs and needs the Don's influence for the same, Vito refuses to do it. What follows is a clash between Vito's fading old values and the new ways which may cause Michael to do the thing he was most reluctant in doing and wage a mob war against all the other mafia families which could tear the Corleone family apart.",
+      "director":"Francis Ford Coppola",
+      "writer":"Mario Puzo, Francis Ford Coppola",
+      "star":"Marlon Brando, Al Pacino, James Caan, Diane Keaton",
+      "releaseDate":"March 24 1972"
+    },
+    {
+      "id":"19",
+      "image":"",
+      "name":"Coco",
+      "category":"Animation, Adventure, Comedy, Family, Fantasy, Music, Mystery",
+      "storyLine":"Despite his family's baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician like his idol, Ernesto de la Cruz. Desperate to prove his talent, Miguel finds himself in the stunning and colorful Land of the Dead following a mysterious chain of events. Along the way, he meets charming trickster Hector, and together, they set off on an extraordinary journey to unlock the real story behind Miguel's family history.",
+      "director":"Lee Unkrich, Adrian Molina",
+      "writer":"Lee Unkrich, Jason Katz, Matthew Aldrich, Adrian Molina",
+      "star":"Anthony Gonzalez(Voice), Gael García Bernal(Voice), Benjamin Bratt(Voice)",
+      "releaseDate":"November 22 2017"
+    },{
+      "id":"20",
+      "image":"",
+      "name":"Toy Story",
+      "category":"Animation, Adventure, Comedy, Family, Fantasy",
+      "storyLine":"A little boy named Andy loves to be in his room, playing with his toys, especially his doll named Woody. But, what do the toys do when Andy is not with them, they come to life. Woody believes that his life (as a toy) is good. However, he must worry about Andy's family moving, and what Woody does not know is about Andy's birthday party. Woody does not realize that Andy's mother gave him an action figure known as Buzz Lightyear, who does not believe that he is a toy, and quickly becomes Andy's new favorite toy. Woody, who is now consumed with jealousy, tries to get rid of Buzz. Then, both Woody and Buzz are now lost. They must find a way to get back to Andy before he moves without them, but they will have to pass through a ruthless toy killer, Sid Phillips.",
+      "director":"John Lasseter",
+      "writer":"John Lasseter, Pete Docter, Andrew Stanton, Joe Ranft",
+      "star":"Tom Hanks(Voice), Tim Allen(Voice), Don Rickles(Voice)",
+      "releaseDate":"November 22 1995"
+    },{
+      "id":"21",
+      "image":"",
+      "name":"The Sixth Sense",
+      "category":"Drama, Mystery, Thriller",
+      "storyLine":"Malcom Crowe (Bruce Willis) is a child psychologist who receives an award on the same night that he is visited by a very unhappy ex-patient. After this encounter, Crowe takes on the task of curing a young boy with the same ills as the ex-patient (Donnie Wahlberg) . This boy sees dead people. Crowe spends a lot of time with the boy much to the dismay of his wife (Olivia Williams). Cole's mom (Toni Collette) is at her wit's end with what to do about her son's increasing problems. Crowe is the boy's only hope.",
+      "director":"M. Night Shyamalan",
+      "writer":"M. Night Shyamalan",
+      "star":"Bruce Willis, Haley Joel Osment, Toni Collette, Olivia Williams",
+      "releaseDate":"August 6 1999"
+    },{
+      "id":"22",
+      "image":"",
+      "name":"Spider-Man: No Way Home",
+      "category":"Action, Adventure, Fantasy, Sci-Fi",
+      "storyLine":"Peter Parker's secret identity is revealed to the entire world. Desperate for help, Peter turns to Doctor Strange to make the world forget that he is Spider-Man. The spell goes horribly wrong and shatters the multiverse, bringing in monstrous villains that could destroy the world.",
+      "director":"Jon Watts",
+      "writer":"Chris McKenna, Erik Sommers, Stan Lee, Steve Ditko",
+      "star":"Tom Holland, Zendaya, Benedict Cumberbatch, Jacob Batalon, Jon Favreau, Jamie Foxx, Willem Dafoe, Alfred Molina",
+      "releaseDate":"December 17 2021"
+    },{
+      "id":"23",
+      "image":"",
+      "name":"Monsters, Inc.",
+      "category":"Animation, Adventure, Comedy, Family, Fantasy",
+      "storyLine":"A city of monsters with no humans called Monstropolis centers around the city's power company, Monsters, Inc. The lovable, confident, tough, furry blue behemoth-like giant monster named James P. Sullivan (better known as Sulley) and his wisecracking best friend, short, green cyclops monster Mike Wazowski, discover what happens when the real world interacts with theirs in the form of a 2-year-old baby girl dubbed Boo, who accidentally sneaks into the monster world with Sulley one night. And now it's up to Sulley and Mike to send Boo back in her door before anybody finds out, especially two evil villains such as Sulley's main rival as a scarer, chameleon-like Randall (a monster that Boo is very afraid of), who possesses the ability to change the color of his skin, and Mike and Sulley's boss Mr. Waternoose, the chairman and chief executive officer of Monsters, Inc.",
+      "director":"Pete Docter, David Silverman, Lee Unkrich",
+      "writer":"Pete Docter, Jill Culton, Jeff Pidgeon, Ralph Eggleston, Andrew Stanton, Daniel Gerson",
+      "star":"John Goodman(Voice), Billy Crystal(Voice), Mary Gibbs(Voice), Steve Buscemi(Voice)",
+      "releaseDate":"November 2 2001"
+    },{
+      "id":"24",
+      "image":"",
+      "name":"Hacksaw Ridge",
+      "category":"Biography, Drama, History, War",
+      "storyLine":"The true story of Desmond T. Doss, the conscientious objector who, at the Battle of Okinawa, was awarded the Medal of Honor for his incredible bravery and regard for his fellow soldiers. We see his upbringing and how this shaped his views, especially his religious view and anti-killing stance. We see Doss's trials and tribulations after enlisting in the US Army and trying to become a medic. Finally, we see the hell on Earth that was Hacksaw Ridge.",
+      "director":"Mel Gibson",
+      "writer":"Robert Schenkkan, Andrew Knight",
+      "star":"Andrew Garfield, Sam Worthington, Luke Bracey, Teresa Palmer, Richard Pyros",
+      "releaseDate":"November 4 2016"
+    },{
+      "id":"25",
+      "image":"",
+      "name":"Braveheart",
+      "category":"Biography, Drama, History, War",
+      "storyLine":"William Wallace is a Scottish rebel who leads an uprising against the cruel English ruler Edward the Longshanks, who wishes to inherit the crown of Scotland for himself. When he was a young boy, William Wallace's father and brother, along with many others, lost their lives trying to free Scotland. Once he loses another of his loved ones, William Wallace begins his long quest to make Scotland free once and for all, along with the assistance of Robert the Bruce.",
+      "director":"Mel Gibson",
+      "writer":"Randall Wallace",
+      "star":"Mel Gibson, Sophie Marceau, Patick McGoohan, Angus Macfadyen",
+      "releaseDate":"May 24 1995"
+    },{
+      "id":"26",
+      "image":"",
+      "name":"Mad Max: Fury Road",
+      "category":"Action, Adventure, Sci-Fi, Thriller",
+      "storyLine":"An apocalyptic story set in the furthest reaches of our planet, in a stark desert landscape where humanity is broken, and almost everyone is crazed fighting for the necessities of life. Within this world exist two rebels on the run who just might be able to restore order. There's Max, a man of action and a man of few words, who seeks peace of mind following the loss of his wife and child in the aftermath of the chaos. And Furiosa, a woman of action and a woman who believes her path to survival may be achieved if she can make it across the desert back to her childhood homeland.",
+      "director":"George Miller",
+      "writer":"George Miller, Brendan McCarthy, Nick Lathouris",
+      "star":"Tom Hardy, Charlize Theron, Nicholas Hoult, Hugh Keays-Byrne, Josh Helman, Nathan Jones, Zoë Kravitz",
+      "releaseDate":"May 15 2015"
+    },{
+      "id":"27",
+      "image":"",
+      "name":"Logan",
+      "category":"Action, Drama, Sci-Fi, Thriller",
+      "storyLine":"In 2029 the mutant population has shrunk significantly due to genetically modified plants designed to reduce mutant powers and the X-Men have disbanded. Logan, whose power to self-heal is dwindling, has surrendered himself to alcohol and now earns a living as a chauffeur. He takes care of the ailing old Professor X whom he keeps hidden away. One day, a female stranger asks Logan to drive a girl named Laura to the Canadian border. At first he refuses, but the Professor has been waiting for a long time for her to appear. Laura possesses an extraordinary fighting prowess and is in many ways like Wolverine. She is pursued by sinister figures working for a powerful corporation; this is because they made her, with Logan's DNA. A decrepit Logan is forced to ask himself if he can or even wants to put his remaining powers to good use. It would appear that in the near-future, the times in which they were able put the world to rights with razor sharp claws and telepathic powers are now over.",
+      "director":"James Mangold",
+      "writer":"James Mangold, Scott Frank, Michael Green, John Romita Sr., Roy Thomas, Len Wein, Herb Trimpe, Mark Millar, Steven McNiven",
+      "star":"Hugh Jackman, Patrick Stewart, Dafne Keen, Boyd Holbrook, Stephen Merchant",
+      "releaseDate":"March 3 2017"
+    },{
+      "id":"28",
+      "image":"",
+      "name":"The Green Mile",
+      "category":"Crime, Drama, Fantasy, Mystery",
+      "storyLine":"Based on Stephen King's 1996 novel of the same name. stars Tom Hanks as a death row corrections officer during the U.S. Great Depression who witnesses supernatural events that occur after an enigmatic inmate (Michael Clarke Duncan) is brought to his facility.",
+      "director":"Frank Darabont",
+      "writer":"Stephen King, Frank Darabont",
+      "star":"Tom Hanks, Michael Clarke Duncan, David Morse, Bonnie Hunt, James Cromwell",
+      "releaseDate":"December 10 1999"
+    },{
+      "id":"29",
+      "image":"",
+      "name":"The Matrix",
+      "category":"Action, Sci-Fi",
+      "storyLine":"Thomas A. Anderson is a man living two lives. By day he is an average computer programmer and by night a hacker known as Neo. Neo has always questioned his reality, but the truth is far beyond his imagination. Neo finds himself targeted by the police when he is contacted by Morpheus, a legendary computer hacker branded a terrorist by the government. As a rebel against the machines, Neo must confront the agents: super-powerful computer programs devoted to stopping Neo and the entire human rebellion.",
+      "director":"Lana Wachowski, Lilly Wachowski",
+      "writer":"Lana Wachowski, Lilly Wachowski",
+      "star":"Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss, Hugo Weaving",
+      "releaseDate":"March 31 1999"
+    },{
+      "id":"30",
+      "image":"",
+      "name":"The Lord of the Rings: The Return of the King",
+      "category":"Action, Adventure, Drama, Fantasy",
+      "storyLine":"The final confrontation between the forces of good and evil fighting for control of the future of Middle-earth. Frodo and Sam reach Mordor in their quest to destroy the One Ring, while Aragorn leads the forces of good against Sauron's evil army at the stone city of Minas Tirith.",
+      "director":"Peter Jackson",
+      "writer":"J.R.R. Tolkien, Fran Walsh, Philippa Boyens, Peter Jackson",
+      "star":"Noel Appleby, Ali Astin, Sean Astin, David Aston, John Bach, Sean Bean",
+      "releaseDate":"December 17 2003"
+    }
+
+  ]
+}
