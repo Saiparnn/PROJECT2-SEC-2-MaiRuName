@@ -1,36 +1,44 @@
 <script setup>
 import Dropdown from '@/components/header/Dropdown.vue'
-import { ref } from 'vue'
+import {onMounted, ref} from 'vue'
+import {getMovies} from "@/composable/getMovies";
 import EmojioneV1AdmissionTickets from "@/components/EmojioneV1AdmissionTickets.vue";
+import DropDrop from "@/components/header/DropDrop.vue";
 
 const isOpen = ref(false)
+const isOpenC = ref(false)
 const name = ref('Navbar')
-const genre = ref([
-  {
-    title: 'Romance',
-    link: '#'
-  },
-  {
-    title: 'Comedy',
-    link: '#'
-  },
-  {
-    title: 'Horror',
-    link: '#'
-  },
-  {
-    title: 'Drama',
-    link: '#'
-  },
-  {
-    title: 'Action',
-    link: '#'
-  },
-  {
-    title: 'Sci-Fi',
-    link: '#'
-  }
-])
+const movies = ref([])
+onMounted(async () => {
+  movies.value = await getMovies()
+  console.log(movies.value)
+})
+// const genre = ref([
+//   {
+//     title: 'Romance',
+//     link: '#'
+//   },
+//   {
+//     title: 'Comedy',
+//     link: '#'
+//   },
+//   {
+//     title: 'Horror',
+//     link: '#'
+//   },
+//   {
+//     title: 'Drama',
+//     link: '#'
+//   },
+//   {
+//     title: 'Action',
+//     link: '#'
+//   },
+//   {
+//     title: 'Sci-Fi',
+//     link: '#'
+//   }
+// ])
 
 const debounceSearch = (event) => {
   clearTimeout(() => {
@@ -54,7 +62,8 @@ const debounceSearch = (event) => {
     <nav class="flex text-[#BC986A] items-center mt-1">
       <div className="menu-item"><a href="#">Home</a></div>
       <Dropdown title="Genre" :items="genre"/>
-      <div className="menu-item"><a href="#">Favorite</a></div>
+<!--      <DropDrop />-->
+<!--      <div className="menu-item"><a href="#">Favorite</a></div>-->
     </nav>
     <!--Search toggle-->
     <form action="" class="absolute right-16 w-max mr-2 mt-1 text-[#BC986A]">
@@ -77,10 +86,10 @@ const debounceSearch = (event) => {
       <button @click="isOpen=!isOpen" class="block h-12 w-12 mr-4 rounded-full overflow-hidden border-2 border-gray-600 focus:outline-none focus:border-white">
         <img class="h-full w-full object-cover" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
       </button>
-      <div v-if="isOpen" class="absolute right-2 mt-1 py-2 w-48 bg-[#659DBD] rounded-lg">
-        <a href="#" class="block px-4 py-2 text-white hover:bg-white hover:text-[#659DBD]">Your Profile</a>
-        <a href="#" class="block px-4 py-2 text-white hover:bg-white hover:text-[#659DBD]">Setting</a>
-        <a href="#" class="block px-4 py-2 text-white hover:bg-white hover:text-[#659DBD]">Sign Out</a>
+      <div v-if="isOpen" class="absolute right-2 mt-1 py-2 w-48 bg-[#BC986A] rounded-lg">
+        <a href="#" class="block px-4 py-2 text-white hover:bg-white hover:text-[#BC986A]">Your Profile</a>
+        <a href="#" class="block px-4 py-2 text-white hover:bg-white hover:text-[#BC986A]">Setting</a>
+        <a href="#" class="block px-4 py-2 text-white hover:bg-white hover:text-[#BC986A]">Sign Out</a>
       </div>
     </div>
   </div>
