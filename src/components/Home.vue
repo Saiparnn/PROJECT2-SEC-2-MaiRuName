@@ -6,7 +6,7 @@ import MovieBox from "@/components/MovieBox.vue";
 <template>
   <div id="app" class="bg-[#659DBD] pb-10">
     <Navbar />
-    <MovieBox />
+<!--    <MovieBox />-->
   </div>
 </template>
 

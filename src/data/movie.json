@@ -1,0 +1,224 @@
+{
+  "movie": [
+  {
+    "Id": "1",
+    "Image": "",
+    "Name": "Avatar: The Way of Water",
+    "Category": "Action Adventure Fantasy Sci-Fi",
+    "StoryLine": "Jake Sully lives with his newfound family formed on the extrasolar moon Pandora. Once a familiar threat returns to finish what was previously started, Jake must work with Neytiri and the army of the Na'vi race to protect their home.",
+    "Director": "James Cameron",
+    "Writer": "James Cameron, Rick Jaffa, Amanda Silver , Josh Friedman , Shane Salerno",
+    "Star": "Sam Worthington , Zoe Saldana , Sigourney Weaver",
+    "First_Release_Date": "December 6 2022"
+  },
+  {
+    "Id": "2",
+    "Image": "",
+    "Name": "Titanic",
+    "Category": "Drama, Romance",
+    "StoryLine": "84 years later, a 100 year-old woman named Rose DeWitt Bukater tells the story to her granddaughter Lizzy Calvert, Brock Lovett, Lewis Bodine, Bobby Buell and Anatoly Mikailavich on the Keldysh about her life set in April 10th 1912, on a ship called Titanic when young Rose boards the departing ship with the upper-class passengers and her mother, Ruth DeWitt Bukater, and her fiancé, Caledon Hockley. Meanwhile, a drifter and artist named Jack Dawson and his best friend Fabrizio De Rossi win third-class tickets to the ship in a game. And she explains the whole story from departure until the death of Titanic on its first and last voyage April 15th, 1912 at 2:20 in the morning.",
+    "Director": "James Cameron",
+    "Writer": "James Cameron",
+    "Star": "Leonardo DiCaprio, Kate Winslet, Billy Zane",
+    "First_Release_Date": "November 1 1997"
+  },
+  {
+    "Id": "3",
+    "Image": "",
+    "Name": "Interstellar",
+    "Category": "Advanture, Drama, Sci-Fi",
+    "StoryLine": "Earth's future has been riddled by disasters, famines, and droughts. There is only one way to ensure mankind's survival: Interstellar travel. A newly discovered wormhole in the far reaches of our solar system allows a team of astronauts to go where no man has gone before, a planet that may have the right environment to sustain human life.",
+    "Director": "Christopher Nolan",
+    "Writer": "Jonathan Nolan, Christopher Nolan",
+    "Star": "Matthew McConaughey, Ellen Burstyn, Mackenzie Foy, Jessica Chastain",
+    "First_Release_Date": "November 7 2014"
+  },
+  {
+    "Id": "4",
+    "Image": "",
+    "Name": "Inception",
+    "Category": "Action, Adventurn, Sci-Fi, Thriller",
+    "StoryLine": "Dom Cobb is a skilled thief, the absolute best in the dangerous art of extraction, stealing valuable secrets from deep within the subconscious during the dream state, when the mind is at its most vulnerable. Cobb's rare ability has made him a coveted player in this treacherous new world of corporate espionage, but it has also made him an international fugitive and cost him everything he has ever loved. Now Cobb is being offered a chance at redemption. One last job could give him his life back but only if he can accomplish the impossible, inception. Instead of the perfect heist, Cobb and his team of specialists have to pull off the reverse: their task is not to steal an idea, but to plant one. If they succeed, it could be the perfect crime. But no amount of careful planning or expertise can prepare the team for the dangerous enemy that seems to predict their every move. An enemy that only Cobb could have seen coming.",
+    "Director": "Christopher Nolan",
+    "Writer": "Christopher Nolan",
+    "Star": "Leonardo DiCaprio, Joseph Gordon-Levitt , Elliot Page, Tom Hardy, Cillian Murphy",
+    "First_Release_Date": "July 16 2010"
+  },
+  {
+    "Id": "5",
+    "Image": "",
+    "Name": "Joker(2019)",
+    "Category": "Crime, Drama, Thriller",
+    "StoryLine": "A socially inept clown for hire - Arthur Fleck aspires to be a stand up comedian among his small job working dressed as a clown holding a sign for advertising. He takes care of his mother- Penny Fleck, and as he learns more about his mental illness, he learns more about his past. Dealing with all the negativity and bullying from society he heads downwards on a spiral, in turn showing how his alter ego Joker, came to be.",
+    "Director": "Todd Phillips",
+    "Writer": "Todd Phillips, Scott Silver, Bob Kane",
+    "Star": "Joaquin Phoenix, Robert De Niro, Zazie Beetz",
+    "First_Release_Date": "October 4 2019"
+  },
+  {
+    "Id": "6",
+    "Image": "",
+    "Name": "Game of Thrones",
+    "Category": "Action, Adventure, Drama, Fantasy",
+    "StoryLine": "In the mythical continent of Westeros, several powerful families fight for control of the Seven Kingdoms. As conflict erupts in the kingdoms of men, an ancient enemy rises once again to threaten them all. Meanwhile, the last heirs of a recently usurped dynasty plot to take back their homeland from across the Narrow Sea.",
+    "Director": "David BenioffD.B, Weiss",
+    "Writer": "David BenioffD.B, Weiss",
+    "Star": "Emilia Clarke, Peter Dinklage, Kit Harington, Lena Headey, ",
+    "First_Release_Date": "April 17 2011"
+  },
+  {
+    "Id": "7",
+    "Image": "",
+    "Name": "The Last of Us",
+    "Category": "Action, Adventure, Drama",
+    "StoryLine": "20 years after modern civilization has been destroyed, Joel, a hardened survivor, is hired to smuggle Ellie, a 14-year-old girl, out of an oppressive quarantine zone. What starts as a small job soon becomes a brutal heartbreaking journey as they both must traverse the U.S. and depend on each other for survival.",
+    "Director": "Neil Drunkmann, Mazin",
+    "Writer": "Neil Drunkmann, Mazin",
+    "Star": "Pedro Pascal, Anna Torv, Melanie Lynskey",
+    "Release_Date": "January 15 2023"
+  },
+  {
+    "Id": "8",
+    "Image": "",
+    "Name": "",
+    "Category": "",
+    "StoryLine": "",
+    "Director": "",
+    "Writer": "",
+    "Star": "",
+    "Release_Date": ""
+  },
+  {
+    "Id": "9",
+    "Image": "",
+    "Name": "",
+    "Category": "",
+    "StoryLine": "",
+    "Director": "",
+    "Writer": "",
+    "Star": "",
+    "Release_Date": ""
+  },
+  {
+    "Id": "10",
+    "Image": "",
+    "Name": "",
+    "Category": "",
+    "StoryLine": "",
+    "Director": "",
+    "Writer": "",
+    "Star": "",
+    "Release_Date": ""
+  },
+  {
+    "Id": "11",
+    "Image": "",
+    "Name": "",
+    "Category": "",
+    "StoryLine": "",
+    "Director": "",
+    "Writer": "",
+    "Star": "",
+    "Release_Date": ""
+  },
+  {
+    "Id": "12",
+    "Image": "",
+    "Name": "",
+    "Category": "",
+    "StoryLine": "",
+    "Director": "",
+    "Writer": "",
+    "Star": "",
+    "Release_Date": ""
+  },
+  {
+    "Id": "13",
+    "Image": "",
+    "Name": "",
+    "Category": "",
+    "StoryLine": "",
+    "Director": "",
+    "Writer": "",
+    "Star": "",
+    "Release_Date": ""
+  },
+  {
+    "Id": "14",
+    "Image": "",
+    "Name": "",
+    "Category": "",
+    "StoryLine": "",
+    "Director": "",
+    "Writer": "",
+    "Star": "",
+    "Release_Date": ""
+  },
+  {
+    "Id": "15",
+    "Image": "",
+    "Name": "",
+    "Category": "",
+    "StoryLine": "",
+    "Director": "",
+    "Writer": "",
+    "Star": "",
+    "Release_Date": ""
+  },
+  {
+    "Id": "16",
+    "Image": "",
+    "Name": "",
+    "Category": "",
+    "StoryLine": "",
+    "Director": "",
+    "Writer": "",
+    "Star": "",
+    "Release_Date": ""
+  },
+  {
+    "Id": "17",
+    "Image": "",
+    "Name": "",
+    "Category": "",
+    "StoryLine": "",
+    "Director": "",
+    "Writer": "",
+    "Star": "",
+    "Release_Date": ""
+  },
+  {
+    "Id": "18",
+    "Image": "",
+    "Name": "",
+    "Category": "",
+    "StoryLine": "",
+    "Director": "",
+    "Writer": "",
+    "Star": "",
+    "Release_Date": ""
+  },
+  {
+    "Id": "19",
+    "Image": "",
+    "Name": "",
+    "Category": "",
+    "StoryLine": "",
+    "Director": "",
+    "Writer": "",
+    "Star": "",
+    "Release_Date": ""
+  },
+  {
+    "Id": "20",
+    "Image": "",
+    "Name": "",
+    "Category": "",
+    "StoryLine": "",
+    "Director": "",
+    "Writer": "",
+    "Star": "",
+    "Release_Date": ""
+    }
+  ]
+}

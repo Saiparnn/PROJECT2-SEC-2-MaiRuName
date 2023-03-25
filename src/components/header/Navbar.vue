@@ -1,52 +1,34 @@
 <script setup>
 import Dropdown from '@/components/header/Dropdown.vue'
-import {onMounted, ref} from 'vue'
-import {getMovies} from "@/composable/getMovies";
 import EmojioneV1AdmissionTickets from "@/components/EmojioneV1AdmissionTickets.vue";
-import DropDrop from "@/components/header/DropDrop.vue";
+import {getMovies} from "@/composable/getMovies";
+import MovieBox from "@/components/MovieBox.vue";
+import {ref, onMounted, computed} from "vue"
 
+const movies = ref([]);
+const searchPayload = ref('');
 const isOpen = ref(false)
-const isOpenC = ref(false)
-const name = ref('Navbar')
-const movies = ref([])
-onMounted(async () => {
-  movies.value = await getMovies()
-  console.log(movies.value)
-})
-// const genre = ref([
-//   {
-//     title: 'Romance',
-//     link: '#'
-//   },
-//   {
-//     title: 'Comedy',
-//     link: '#'
-//   },
-//   {
-//     title: 'Horror',
-//     link: '#'
-//   },
-//   {
-//     title: 'Drama',
-//     link: '#'
-//   },
-//   {
-//     title: 'Action',
-//     link: '#'
-//   },
-//   {
-//     title: 'Sci-Fi',
-//     link: '#'
-//   }
-// ])
+const genre = ref(['Romance', 'Comedy', 'Horror', 'Drama', 'Action', 'Sci-Fi'])
 
-const debounceSearch = (event) => {
-  clearTimeout(() => {
-    debounce.value = setTimeout(() => {
-      console.log(event)
-    }, 600);
-  })
+onMounted(async () => {
+  getMovieToFilter()
+})
+
+const getMovieToFilter = async () => {
+  const res = await getMovies()
+  res.map(x => movies.value.push(x))
 }
+
+let filteredMovies = computed(() => {
+  if(searchPayload.value===''){
+    return movies.value
+  }else {
+    return movies.value.filter((movie) => {
+      return movie.name.toLowerCase().includes(searchPayload.value.toLowerCase())
+    })
+  }
+})
+
 </script>
 
 <template>
@@ -62,25 +44,19 @@ const debounceSearch = (event) => {
     <nav class="flex text-[#BC986A] items-center mt-1">
       <div className="menu-item"><a href="#">Home</a></div>
       <Dropdown title="Genre" :items="genre"/>
-<!--      <DropDrop />-->
-<!--      <div className="menu-item"><a href="#">Favorite</a></div>-->
     </nav>
     <!--Search toggle-->
-    <form action="" class="absolute right-16 w-max mr-2 mt-1 text-[#BC986A]">
-      <input type="search" placeholder="Search for movies" @input="debounceSearch"
-             class="peer cursor-pointer relative z-10 h-12 w-12 rounded-full border bg-transparent pl-12 outline-none border-[#BC986A] focus:w-full focus:cursor-text focus:border-[#BC986A] focus:pl-16 focus:pr-4" />
+    <form class="absolute right-16 w-max mr-2 mt-1 text-[#BC986A]">
+      <input
+          type="search"
+          v-model.trim = "searchPayload"
+          placeholder="Search for movies"
+          class="peer cursor-pointer relative z-10 h-12 w-12 rounded-full border bg-transparent pl-12 outline-none border-[#BC986A] focus:w-full focus:cursor-text focus:border-[#BC986A] focus:pl-16 focus:pr-4" />
       <svg xmlns="http://www.w3.org/2000/svg" class="absolute inset-y-0 my-auto h-8 w-12 border-r border-transparent stroke-[#BC986A] px-3.5 peer-focus:border-[#BC986A] peer-focus:stroke-[#BC986A]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
         <path class="border-[#BC986A]" stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
       </svg>
-      <div v-if="false" class="absolute mt-1 ml-2 rounded bg-gray-600 w-60">
-        <ul class="mt-1">
-          <li class="flex items-center border-b border-gray-500 p-1">
-            <img src="@/assets/images/avengers.jpeg" alt="" class="w-10"/>
-            <span class="ml-3">Die Hard</span>
-          </li>
-        </ul>
-      </div>
     </form>
+
     <!-- Profile dropdown -->
     <div class="absolute right-0 justify-items-end mt-1">
       <button @click="isOpen=!isOpen" class="block h-12 w-12 mr-4 rounded-full overflow-hidden border-2 border-gray-600 focus:outline-none focus:border-white">
@@ -93,6 +69,7 @@ const debounceSearch = (event) => {
       </div>
     </div>
   </div>
+  <MovieBox :filteredMovies="filteredMovies"/>
 </template>
 
 <style>
