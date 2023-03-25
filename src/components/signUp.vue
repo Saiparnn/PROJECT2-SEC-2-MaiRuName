@@ -1,7 +1,8 @@
 <script setup>
 import getUser from '../composable/getUser'
 import { ref,onUpdated } from 'vue';
-const props = defineProps(['TogglePopup'])
+
+const props = defineProps(['TogglePopup', 'popupTriggers'])
 const userNameForSignUp=ref('')
 const passwordForSignUp=ref('')
 const confirmPassword=ref('')
@@ -14,10 +15,10 @@ onUpdated (async () => { // ใข้ onupdate เพือจะได้สา
 const updateUser = async () => {
   const foundUser = loginData.value.find(user => user.userName === userNameForSignUp.value);
   if(foundUser){
-    return alert("you can't use this name")
+    return alert("This name is already used")
   }
   if(confirmPassword.value !== passwordForSignUp.value){
-    return alert("can't register your password and confirmpassword not correct")
+    return alert("Can't register your password and confirmpassword not correct")
   }
   if(userNameForSignUp.value === '' || passwordForSignUp === '' || confirmPassword === ''){
     return alert('You should type something. ')
@@ -35,7 +36,7 @@ const updateUser = async () => {
    
     if (res.ok) {
       console.log('Add success');
-      props = false
+      return props.popupTriggers.signUpTrigger = !props.popupTriggers.signUpTrigger
     }
      else {
       throw new Error('cannot Add')
@@ -46,6 +47,8 @@ const updateUser = async () => {
    }
 }
 };
+
+
 </script>
  
 <template>
@@ -54,17 +57,17 @@ const updateUser = async () => {
         <div class="flex items-center justify-center h-screen font-serif text-black/60">
             <div class="bg-[#D9D9D9] w-128 rounded-lg p-10 relative">
             <h1 class="text-5xl mb-6">Sign Up</h1>
-            <img @click="TogglePopup" src="./icons/icons8-close-30.png" class="absolute right-4 top-4 cursor-pointer">
+            <img @click="TogglePopup('signUpTrigger')" src="./icons/icons8-close-30.png" class="absolute right-4 top-4 cursor-pointer">
             <div class="my-4">
                 <p class="text-lg">Username</p>
-                <input  v-model="userNameForSignUp" 
+                <input  v-model.trim="userNameForSignUp" 
                 type="text" 
                 id="userNameSignup"
                 class="rounded-md w-97 h-16 p-2"/>
             </div>
             <div class="my-4">
                 <p class="text-lg">Password</p>
-                <input v-model="passwordForSignUp"
+                <input v-model.trim="passwordForSignUp"
                 type="password"  
                 id="passwordSignup"
                 class="rounded-md w-97 h-16 p-2"/>
