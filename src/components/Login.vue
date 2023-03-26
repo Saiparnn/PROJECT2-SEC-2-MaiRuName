@@ -1,13 +1,13 @@
 <script setup>
 import { onUpdated, ref } from 'vue';
-import signup from './signUp.vue'
 import getUser from '../composable/getUser';
+import signup from './signUp.vue';
+import router from '../router';
+
 const props = defineProps(['TogglePopup'])
 const userNameForLogin=ref('')
 const passWordForLogin=ref('')
 const loginData=ref([])
-
-
 
 let popupTriggers = ref({
   loginTrigger : ref(false),
@@ -34,19 +34,24 @@ const userLogin = async () => {
     return alert('You should type something. ')
   }
   if(userNameForLogin.value !== '' && passWordForLogin.value !== ''){
-  try {
-    const foundUser = loginData.value.find(user => user.userName === userNameForLogin.value && user.passWord === passWordForLogin.value);
-    if (foundUser) {
-      console.log('login successfull');
-    } else {
-      throw new Error('Username or password is incorrect.')
+    try {
+      const foundUser = loginData.value.find(user => user.userName === userNameForLogin.value && user.passWord === passWordForLogin.value);
+      if (foundUser) {
+        router.push('/navbar')
+        console.log('login successfull');
+      } else {
+        throw new Error('Username or password is incorrect.') 
+      }
+    } catch (error) {
+      console.log(`Error: ${error}`);
     }
-  } catch (error) {
-    console.log(`Error: ${error}`);
-  }
 }
 };
 
+
+function goToNextPage() {
+  router.push('/navbar')
+}
 </script>
 
 <template>
@@ -62,7 +67,7 @@ const userLogin = async () => {
           type="text"    
           class="rounded-md w-97 h-16 p-2"
           id="userNameLogin"
-          v-model="userNameForLogin"/>
+          v-model.trim="userNameForLogin"/>
         </div>
         <div class="mb-16">
           <p class="text-lg">Password</p>
@@ -70,20 +75,21 @@ const userLogin = async () => {
           type="password"  
           class="rounded-md w-97 h-16 p-2"
           id="passwordLogin"
-          v-model="passWordForLogin"/>
+          v-model.trim="passWordForLogin"/>
         </div>
-                
-        <button class="bg-[#99B89C] w-96 h-16 rounded-lg text-white text-3xl 
-        active:scale-105 ease-in-out duration-300 hover:text-[#BC986A]
-         hover:bg-white hover:border hover:border-[#BC986A] " type="summit" @click="userLogin">LOG IN</button>
-        <p class="mt-2">New for MaiRuDuRai? <span ><button @click="TogglePopupSignUp('signUpTrigger')"  class="font-bold text-black hover:underline">Sign up now !!!</button> <signup v-if="popupTriggers.signUpTrigger" :TogglePopup="()=>TogglePopup('signUpTrigger')">
-
-</signup></span></p>
+         
+        <button class="bg-[#99B89C] w-96 h-16 rounded-lg text-white text-3xl active:scale-105 ease-in-out duration-300 hover:text-[#BC986A]  hover:border hover:border-[#BC986A] "  @click="goToNextPage">LOG IN</button>
+        <p class="mt-2">New for MaiRuDuRai? <span ><button @click="TogglePopupSignUp('signUpTrigger')"  
+          class="font-bold text-black hover:underline">Sign up now !!!</button> 
+          <signup v-if="popupTriggers.signUpTrigger" :TogglePopup="()=>TogglePopup('signUpTrigger')"/>
+        </span>
+        </p>
 
         </div>
     </slot>
   </div>
 </div>
+
 </template>
  
 <style scoped>
