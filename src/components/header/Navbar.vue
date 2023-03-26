@@ -8,10 +8,16 @@ const movies = ref([]);
 const searchPayload = ref('');
 const isOpen = ref(false)
 const genre = ref(['Romance', 'Comedy', 'Horror', 'Drama', 'Action', 'Sci-Fi'])
+const selectedGenre = ref("All");
 
 onMounted(async () => {
   getMovieToFilter()
 })
+
+const selectGenre = (genre) => {
+  selectedGenre.value = genre;
+  isOpenNav.value = true;
+};
 
 const getMovieToFilter = async () => {
   const res = await getMovies()
@@ -28,6 +34,20 @@ let filteredMovies = computed(() => {
   }
 })
 
+const filteredGenre = computed(() => {
+  if (selectedGenre.value === "All") {
+    return movies.value;
+  }
+  if (selectedGenre.value === "Others") {
+  const isOthers = movies.value.filter(e => genre.value.every(a => !e.category.includes(a)));
+    return isOthers
+  } else {
+    
+    const movieFill =  movies.value.filter(e => e.category.toLowerCase().includes(selectedGenre.value.toLowerCase())
+    );
+    return movieFill
+  }
+});
 </script>
 
 <template>
