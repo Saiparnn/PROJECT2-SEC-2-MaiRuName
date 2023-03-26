@@ -1,11 +1,13 @@
 <script setup>
-import Home from "@/components/Home.vue";
+import Navbar from './components/header/Navbar.vue';
 </script>
-
+ 
 <template>
-  <div id="app">
-    <Home />
+  <div>
+    <Navbar/>
   </div>
 </template>
+ 
+<style scoped>
 
-<style scoped></style>
+</style>
