@@ -38,7 +38,7 @@ let filteredMovies = computed(() => {
         <div class=""> <!-- resize icon -->
           <EmojioneV1AdmissionTickets />
         </div>
-        <span class="self-center font-serif whitespace-nowrap ml-3 mr-4 mt-0.5 text-[#659DBD] font-bold text-2xl">MaiRuDuRai</span>
+        <router-link to="/moviebox"><span class="self-center font-serif whitespace-nowrap ml-3 mr-4 mt-0.5 text-[#659DBD] font-bold text-2xl">MaiRuDuRai</span></router-link>
       </a>
     </div>
     <nav class="flex text-[#BC986A] items-center mt-1">
