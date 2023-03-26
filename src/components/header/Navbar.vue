@@ -7,6 +7,7 @@ import {ref, onMounted, computed, onUpdated} from "vue"
 const movies = ref([]);
 const searchPayload = ref('');
 const isOpen = ref(false)
+const isOpenGenre = ref(false)
 const genre = ref(['Romance', 'Comedy', 'Horror', 'Drama', 'Action', 'Sci-Fi'])
 const selectedGenre = ref("All");
 
@@ -16,7 +17,7 @@ onMounted(async () => {
 
 const selectGenre = (genre) => {
   selectedGenre.value = genre;
-  isOpenNav.value = true;
+  isOpen.value = true;
 };
 
 const getMovieToFilter = async () => {
@@ -63,7 +64,28 @@ const filteredGenre = computed(() => {
     </div>
     <nav class="flex text-[#BC986A] items-center mt-1">
         <router-link to="/moviebox"><div className="menu-item">Home</div></router-link>
-        <Dropdown title="Genre" :items="genre"/>
+      <div @click="isOpenGenre=!isOpenGenre" class="flex" className="menu-item">
+        Genre
+        <svg viewBox="0 0 1030 638" width="10" class="w-2.5 ml-2.5">
+          <path d="M1017 68L541 626q-11 12-26 12t-26-12L13 68Q-3 49 6 24.5T39 0h952q24 0 33 24.5t-7 43.5z" fill="#BC986A"></path>
+        </svg>
+      </div>
+      <div v-if="isOpenGenre" class="absolute left-[290px] mt-[625px] py-2 w-28 bg-[#BC986A] rounded-lg text-white">
+        <div @click="selectGenre('All')" class="block px-4 py-2 hover:bg-white hover:text-[#BC986A]">All</div>
+        <div @click="selectGenre('Comedy')" class="block px-4 py-2 hover:bg-white hover:text-[#BC986A]">Comedy</div>
+        <div @click="selectGenre('Horror')" class="block px-4 py-2 hover:bg-white hover:text-[#BC986A]">Horror</div>
+        <div @click="selectGenre('Thriller')" class="block px-4 py-2 hover:bg-white hover:text-[#BC986A]">Thriller</div>
+        <div @click="selectGenre('Mystery')" class="block px-4 py-2 hover:bg-white hover:text-[#BC986A]">Mystery</div>
+        <div @click="selectGenre('Drama')" class="block px-4 py-2 hover:bg-white hover:text-[#BC986A]">Drama</div>
+        <div @click="selectGenre('Action')" class="block px-4 py-2 hover:bg-white hover:text-[#BC986A]">Action</div>
+        <div @click="selectGenre('Sci-Fi')" class="block px-4 py-2 hover:bg-white hover:text-[#BC986A]">Sci-Fi</div>
+        <div @click="selectGenre('Animation')" class="block px-4 py-2 hover:bg-white hover:text-[#BC986A]">Animation</div>
+        <div @click="selectGenre('Adventure')" class="block px-4 py-2 hover:bg-white hover:text-[#BC986A]">Adventure</div>
+        <div @click="selectGenre('Fantasy')" class="block px-4 py-2 hover:bg-white hover:text-[#BC986A]">Fantasy</div>
+        <div @click="selectGenre('Crime')" class="block px-4 py-2 hover:bg-white hover:text-[#BC986A]">Crime</div>
+        <div @click="selectGenre('War')" class="block px-4 py-2 hover:bg-white hover:text-[#BC986A]">War</div>
+        <div @click="selectGenre('Others')" class="block px-4 py-2 hover:bg-white hover:text-[#BC986A]">Others</div>
+      </div>
     </nav>
     <!--Search toggle-->
     <form class="absolute right-16 w-max mr-2 mt-1 text-[#BC986A]">
