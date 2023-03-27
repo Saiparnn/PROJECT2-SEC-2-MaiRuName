@@ -39,6 +39,7 @@ const userLogin = async () => {
       if (foundUser) {
         router.push('/moviebox')
         console.log('login successfull');
+        localStorage.setItem("userName",userNameForLogin.value)
       } else {
         alert('Username or password is incorrect.') 
         throw new Error('Username or password is incorrect.') 

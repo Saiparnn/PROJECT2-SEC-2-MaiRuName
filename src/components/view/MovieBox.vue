@@ -10,22 +10,38 @@ onMounted(async () => {
   movies.value = await getMovies()
 })
 
-// const props = defineProps(['filteredMovies'])
-let movie_name = ref('')
-let movie_category = ref('')
-let movie_storyLine = ref('')
-let movie_director = ref('')
-let movie_writer = ref('')
-let movie_star = ref('')
-let movie_releaseDate = ref('')
+const movie_name = ref('')
+const movie_category = ref('')
+const movie_storyLine = ref('')
+const movie_director = ref('')
+const movie_writer = ref('')
+const movie_star = ref('')
+const movie_releaseDate = ref('')
 
-let myModel = ref(false)
-let actionButton = ref('Insert')
-let dynamicTitle = ref('')
-let alertBox = ref(false)
-let file = ref(null)
-let method = ref('')
-let searchPayload = ref('')
+const myModel = ref(false)
+const actionButton = ref('Insert')
+const dynamicTitle = ref('')
+const alertBox = ref(false)
+const file = ref(null)
+const method = ref('')
+const searchPayload = ref('')
+const nameGenre = ref('Genre')
+const isOpenGenre = ref(false)
+const genre =ref([
+  "Romance",
+  "Comedy",
+  "Horror",
+  "Drama",
+  "Action",
+  "Sci-Fi",
+  "Thriller",
+  "Mystery",
+  "Animation",
+  "Adventure",
+  "Fantasy",
+  "Crime",
+  "War",
+])
 
 let openModal = () => {
   method.value = 'insert'
@@ -101,7 +117,7 @@ const clickMovie = (id) => {
 const selectedGenre = ref("All");
 const selectGenre = (genre) => {
   selectedGenre.value = genre;
-  isOpenGenre.value = false;
+  isOpenGenre.value = false
   nameGenre.value = genre
 };
 
@@ -131,7 +147,7 @@ let filteredMovies = computed(() => {
 </script>
 
 <template>
-  <Navbar/>
+  <Navbar @filterCategory="selectGenre"/>
   <div class="p-4 bg-[#659DBD]">
     <div class="flex w-full"> 
       <form class="absolute right-16 w-max mr-2 text-white justify-center content-center">
