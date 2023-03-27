@@ -1,14 +1,28 @@
 <script setup>
-import Dropdown from './Dropdown.vue'
 import EmojioneV1AdmissionTickets from "../EmojioneV1AdmissionTickets.vue";
 import { getMovies } from "../../composable/getMovies";
 import {ref, onMounted, computed, onUpdated} from "vue"
 
+const nameGenre = ref('Genre')
 const movies = ref([]);
 const searchPayload = ref('');
 const isOpen = ref(false)
 const isOpenGenre = ref(false)
-const genre = ref(['Romance', 'Comedy', 'Horror', 'Drama', 'Action', 'Sci-Fi'])
+const genre =ref([
+  "Romance",
+  "Comedy",
+  "Horror",
+  "Drama",
+  "Action",
+  "Sci-Fi",
+  "Thriller",
+  "Mystery",
+  "Animation",
+  "Adventure",
+  "Fantasy",
+  "Crime",
+  "War",
+])
 const selectedGenre = ref("All");
 
 onMounted(async () => {
@@ -17,7 +31,8 @@ onMounted(async () => {
 
 const selectGenre = (genre) => {
   selectedGenre.value = genre;
-  isOpen.value = true;
+  isOpenGenre.value = false;
+  nameGenre.value = genre
 };
 
 const getMovieToFilter = async () => {
@@ -25,30 +40,32 @@ const getMovieToFilter = async () => {
   res.map(x => movies.value.push(x))
 }
 
-let filteredMovies = computed(() => {
-  if(searchPayload.value===''){
-    return movies.value
-  }else {
-    return movies.value.filter((movie) => {
-      return movie.name.toLowerCase().includes(searchPayload.value.toLowerCase())
-    })
-  }
-})
 
-const filteredGenre = computed(() => {
-  if (selectedGenre.value === "All") {
+const filterGenre = computed(() => { 
+if (selectedGenre.value === "All") {
     return movies.value;
   }
   if (selectedGenre.value === "Others") {
   const isOthers = movies.value.filter(e => genre.value.every(a => !e.category.includes(a)));
     return isOthers
-  } else {
-    
+  }
+  else {
     const movieFill =  movies.value.filter(e => e.category.toLowerCase().includes(selectedGenre.value.toLowerCase())
     );
     return movieFill
   }
-});
+})
+
+const filteredMovies = computed(() => {
+  if(searchPayload.value===''){
+    return filterGenre.value
+  }else {
+    return filterGenre.value.filter((movie) => {
+      return movie.name.toLowerCase().includes(searchPayload.value.toLowerCase())
+    })
+  }
+})
+
 </script>
 
 <template>
@@ -65,7 +82,7 @@ const filteredGenre = computed(() => {
     <nav class="flex text-[#BC986A] items-center mt-1">
         <router-link to="/moviebox"><div className="menu-item">Home</div></router-link>
       <div @click="isOpenGenre=!isOpenGenre" class="flex" className="menu-item">
-        Genre
+        {{nameGenre}}
         <svg viewBox="0 0 1030 638" width="10" class="w-2.5 ml-2.5">
           <path d="M1017 68L541 626q-11 12-26 12t-26-12L13 68Q-3 49 6 24.5T39 0h952q24 0 33 24.5t-7 43.5z" fill="#BC986A"></path>
         </svg>
@@ -110,7 +127,8 @@ const filteredGenre = computed(() => {
       </div>
     </div>
   </div>
-  <router-view :filteredMovies="filteredMovies"/>
+  <router-view :filteredMovies="filteredMovies" />
+  <!-- :filterGenre="filterGenre" -->
 </div>
 </template>
 

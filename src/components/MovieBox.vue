@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, onUpdated, onBeforeMount, onBeforeUpdate } from "vue";
+import { ref, onMounted} from "vue";
 import { getMovies } from "../composable/getMovies";
 import BinaryPreview from './BinaryPreview.vue';
 import router from '../router/index.js'
