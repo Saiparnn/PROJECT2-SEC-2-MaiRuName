@@ -1,6 +1,6 @@
 const getUser = async()=>{
     try{
-        const res = await fetch('http://localhost:5000/infoOfUser')
+        const res = await fetch('http://localhost:3000/infoOfUser')
         if(res.ok){
             const loginData = await res.json()  // ส่งข้อมูลที่ fetch มาให้ใช้งานได้ หรือ ดึงข้อมูลจาก fetch มาใช้
             return loginData // return loginData ที่ได้รับมาจาก fetch แล้้ว ใช้ func .json()
