@@ -1,6 +1,7 @@
 <script setup>
 import EmojioneV1AdmissionTickets from "../EmojioneV1AdmissionTickets.vue";
 import { ref } from "vue"
+import router from '../../router/index.js'
 
 const emits = defineEmits(['filterCategory'])
 
@@ -57,7 +58,7 @@ const selectGenre = (genre) => {
             <path d="M1017 68L541 626q-11 12-26 12t-26-12L13 68Q-3 49 6 24.5T39 0h952q24 0 33 24.5t-7 43.5z" fill="#BC986A"></path>
           </svg>
         </div>
-        <div v-if="isOpenGenre"  class="absolute left-[290px] mt-[625px] py-2 w-28 bg-[#BC986A] rounded-lg text-white">
+        <div v-if="isOpenGenre"  class="absolute left-[290px] mt-[625px] py-2 w-28 bg-[#BC986A] rounded-lg text-white z-40">
           <div v-for="genre in genres" @click="$emit('filterCategory', $event.target.innerText),selectGenre($event.target.innerText)" class="block px-4 py-2 hover:bg-white hover:text-[#BC986A]">
             {{ genre }}
           </div>
