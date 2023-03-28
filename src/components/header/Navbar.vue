@@ -8,6 +8,7 @@ const nameGenre = ref('Genre')
 const isOpen = ref(false)
 const isOpenGenre = ref(false)
 const genres =ref([
+  "All",
   "Romance",
   "Comedy",
   "Horror",
