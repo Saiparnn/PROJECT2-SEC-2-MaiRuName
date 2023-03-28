@@ -75,7 +75,7 @@ const userLogin = async () => {
           v-model.trim="passWordForLogin"/>
         </div>
          
-        <button @click="userLogin" class="bg-[#99B89C] w-96 h-16 rounded-lg text-white text-3xl active:scale-105 ease-in-out duration-300 hover:text-[#BC986A]  hover:border hover:border-[#BC986A]">LOG IN</button>
+        <button @click="userLogin" class="bg-[#99B89C] w-97 h-16 rounded-lg text-white text-3xl active:scale-105 ease-in-out duration-300 hover:text-[#BC986A]  hover:border hover:border-[#BC986A]">LOG IN</button>
         <p class="mt-2">New for MaiRuDuRai? <span ><button @click="TogglePopupSignUp('signUpTrigger')"  
           class="font-bold text-black hover:underline">Sign up now !!!</button> 
           <signup v-if="popupTriggers.signUpTrigger" :TogglePopup="()=>TogglePopup('signUpTrigger')"/>
