@@ -52,6 +52,7 @@ let openModal = () => {
   movie_writer.value = ''
   movie_star.value = ''
   movie_releaseDate.value = ''
+  selectedBinaryFile.value = ''
   actionButton.value = 'Insert'
   dynamicTitle.value = 'Insert Data'
   myModel.value = true
@@ -78,8 +79,8 @@ const submitData = async () => {
      ){
     try{
         const reader = new FileReader()
-        reader.onload = (event) => {
-          fetch('http://localhost:3000/movies', {
+        reader.onload = async (event) => {
+          const res = await fetch('http://localhost:3000/movies', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -92,8 +93,10 @@ const submitData = async () => {
               "star": movie_star.value,
               "releaseDate": movie_releaseDate.value,
             })
-          })
-          .then(()=>window.location.reload())
+          }) 
+          const addMovieToFontend = await res.json()
+          movies.value.push(addMovieToFontend)
+          myModel.value = false
         }
         reader.readAsDataURL(file.value)
                 
@@ -102,7 +105,7 @@ const submitData = async () => {
     }
   }else{
     alertBox.value = true
-    console.log("fail");
+    // console.log("fail");
     throw new Error("Cannot Add Movie !!! Form isn't complete")
   }
 }

@@ -31,13 +31,11 @@ let movies = ref('')
 let isConfirmingDelete = ref(false)
 let ShowConfirmDelete = ref(false)
 
-
-
 const DeleteClick = () =>{
-      console.log('one more click to Delete');
+      // console.log('one more click to Delete');
       isConfirmingDelete.value = true;
       ShowConfirmDelete.value = true;
-      console.log(ShowConfirmDelete);
+      // console.log(ShowConfirmDelete);
       setTimeout(() => {
         console.log('Cancel Delete');
         isConfirmingDelete.value = false;
@@ -49,8 +47,8 @@ const DoubleClickDelete = async (movieID) => {
   try{
     const response = await fetch(`http://localhost:3000/movies/${movieID}`, { 
       method: 'DELETE'})
-      .then(() => { router.push('/moviebox').then(()=>location.reload()) })
-      movies.value=movies.value.filter((movie) => movie.id !== movieID)
+      .then(() => router.push('/moviebox'))
+      oneMovie.value=oneMovie.value.filter((movie) => movie.id !== movieID)
       isConfirmingDelete = false;
   }
   catch(error) {

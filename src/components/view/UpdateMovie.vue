@@ -1,13 +1,18 @@
 <script setup>
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import BinaryPreview from '../BinaryPreview.vue'
 import router from '../../router/index.js'
 import Navbar from '../header/Navbar.vue'
 import goToHomePage from '../../composable/goBack.js'
+import { getMovies } from "../../composable/getMovies";
+
+const movies = ref([])
+onMounted(async () => {
+  movies.value = await getMovies()
+})
 
 const route = useRoute()
-
 let id = ref(route.params.id)
 let movie_name = ref('')
 let movie_category = ref('')
@@ -22,7 +27,7 @@ let imgBeforeUpdate = ref('')
 let previewImgBeforeUpdate = ref(true)
 let hiddenWhenUpdate = ref(false)
 
-const fetchData = () => {
+const fetchBeforeUpdateData = () => {
     fetch("http://localhost:3000/movies/"+id.value)
     .then(res => res.json())
     .then((result) => {
@@ -36,7 +41,7 @@ const fetchData = () => {
         imgBeforeUpdate.value = result.image
     })
 }
-fetchData()
+fetchBeforeUpdateData()
 
 const selectedBinaryFile = ref('')
 const chooseBinaryFile = (event) => {
@@ -67,37 +72,63 @@ const updateMovie = async () => {
                 "star": movie_star.value,
                 "releaseDate": movie_releaseDate.value
             })
-        }).then(res => res.json())
-        .then(() => { router.push('/moviebox').then(()=>location.reload()) })
+        })
+        const updateMovieToFontend = await response.json()
+        movies.value.map((movie) => {
+          if(movie.id === updateMovieToFontend.id) {
+            movie.image = updateMovieToFontend.image
+            movie.name = updateMovieToFontend.name
+            movie.category = updateMovieToFontend.category
+            movie.storyLine = updateMovieToFontend.storyLine
+            movie.director = updateMovieToFontend.director
+            movie.writer = updateMovieToFontend.writer
+            movie.star = updateMovieToFontend.star
+            movie.releaseDate = updateMovieToFontend.releaseDate
+          }
+          return movie
+        })
+        router.push('/moviebox')
     }catch(error) {
         console.log("error");
     }
   }else {
       try{
-      const reader = new FileReader()
-          reader.onload = (event) => {
-            fetch(("http://localhost:3000/movies/"+id.value), {
-              method: 'PUT',
-              headers: {'Content-Type': 'application/json'},
-              body: JSON.stringify({
-                "image" : event.target.result,
-                "name": movie_name.value,
-                "category": movie_category.value,
-                "storyLine": movie_storyLine.value,
-                "director": movie_director.value,
-                "writer": movie_writer.value,
-                "star": movie_star.value,
-                "releaseDate": movie_releaseDate.value
+        const reader = new FileReader()
+            reader.onload = async (event) => {
+              const res = await fetch(("http://localhost:3000/movies/"+id.value), {
+                method: 'PUT',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                  "image" : event.target.result,
+                  "name": movie_name.value,
+                  "category": movie_category.value,
+                  "storyLine": movie_storyLine.value,
+                  "director": movie_director.value,
+                  "writer": movie_writer.value,
+                  "star": movie_star.value,
+                  "releaseDate": movie_releaseDate.value
+                })
               })
-            }).then(res => res.json())
-              .then(() => { router.push('/moviebox').then(()=>location.reload()) })
-              
-          }
-          reader.readAsDataURL(file.value)
-    }catch(error) {
-      console.log(`ERROR: ${error}`);
-    }
-
+              const updateMovieToFontend = await res.json()
+              movies.value.map((movie) => {
+                if(movie.id === updateMovieToFontend.id) {
+                  movie.image = updateMovieToFontend.image
+                  movie.name = updateMovieToFontend.name
+                  movie.category = updateMovieToFontend.category
+                  movie.storyLine = updateMovieToFontend.storyLine
+                  movie.director = updateMovieToFontend.director
+                  movie.writer = updateMovieToFontend.writer
+                  movie.star = updateMovieToFontend.star
+                  movie.releaseDate = updateMovieToFontend.releaseDate
+                }
+                return movie
+              })
+              router.push('/moviebox')
+            }
+            reader.readAsDataURL(file.value)
+      }catch(error) {
+        console.log(`ERROR: ${error}`);
+      }
   }
 }
 </script>
