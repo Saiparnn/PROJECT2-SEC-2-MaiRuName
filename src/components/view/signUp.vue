@@ -1,4 +1,4 @@
-v<script setup>
+<script setup>
 import getUser from '../../composable/getUser'
 import { ref,onUpdated } from 'vue';
 
@@ -95,7 +95,7 @@ const updateUser = async () => {
             </div>
             <div v-show="alreadyused" class="text-red-500">This name is already used</div>
             <div v-show="signupEmpty" class="text-red-500">You should type something...</div>
-            <button class="bg-[#99B89C] mt-5 w-96 h-16 rounded-lg text-white text-3xl 
+            <button class="bg-[#99B89C] mt-1 w-96 h-16 rounded-lg text-white text-3xl 
             active:scale-105 ease-in-out duration-300 hover:text-[#BC986A] 
              hover:border hover:border-[#BC986A] " 
             @click="updateUser" type="summit">SIGN UP</button>

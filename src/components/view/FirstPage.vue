@@ -29,9 +29,9 @@ const TogglePopup = (trigger) => {
     <login v-if="popupTriggers.loginTrigger" :TogglePopup="()=>TogglePopup('loginTrigger')"/>
     <signup v-if="popupTriggers.signUpTrigger" :TogglePopup="()=>TogglePopup('signUpTrigger')" :popupTriggers="popupTriggers" /> 
      
-    <div class="flex bg-[#FBEEC1] h-20 p-2 items-center justify-center absolute inset-x-0 bottom-0 ">
+    <div class="flex bg-[#FBEEC1] h-20 p-2 items-center justify-center absolute inset-x-0 bottom-0 text-white">
       <h1 class="text-3xl text-[#8D8741]">- MaiRuName -</h1>
-      <button @click="()=>TogglePopup('signUpTrigger')" class="absolute right-5 bg-[#BC986A] rounded-full border-2 border-[#BC986A] w-28 h-11 text-2xl text-white active:scale-105 ease-in-out duration-300 hover:text-[#BC986A] hover:bg-[#FBEEC1] hover:border-[#659DBD] hover:border-2">Sign Up</button>
+      <button @click="()=>TogglePopup('signUpTrigger')" class="absolute right-5 bg-[#BC986A] rounded-full border-2 border-[#BC986A] w-28 h-11 text-2xl active:scale-105 ease-in-out duration-300 hover:text-[#BC986A] hover:bg-[#FBEEC1] hover:border-[#659DBD] hover:border-2">Sign Up</button>
     </div>
   </div>
 

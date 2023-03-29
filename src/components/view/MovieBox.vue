@@ -45,16 +45,17 @@ const genre =ref([
 
 let openModal = () => {
   method.value = 'insert'
-  movies.movie_name = ''
-  movies.movie_category = ''
-  movies.movie_storyLine = ''
-  movies.movie_director = ''
-  movies.movie_writer = ''
-  movies.movie_star = ''
-  movies.movie_releaseDate = ''
+  movie_name.value = ''
+  movie_category.value = ''
+  movie_storyLine.value = ''
+  movie_director.value = ''
+  movie_writer.value = ''
+  movie_star.value = ''
+  movie_releaseDate.value = ''
   actionButton.value = 'Insert'
   dynamicTitle.value = 'Insert Data'
   myModel.value = true
+  alertBox.value = false
 }
 
 const selectedBinaryFile = ref('')
@@ -149,15 +150,15 @@ let filteredMovies = computed(() => {
 <template>
   <Navbar @filterCategory="selectGenre"/>
   <div class="p-4 bg-[#659DBD]">
-    <div class="flex w-full"> 
+    <div class="flex w-full items-center"> 
       <form class="absolute right-16 w-max mr-2 text-white justify-center content-center">
         <input
             type="search"
             v-model.trim = "searchPayload"
             placeholder="Search for movies"
-            class="peer cursor-pointer relative z-10 h-12 w-12 rounded-full border bg-transparent pl-12 outline-none border-white focus:w-full focus:cursor-text focus:border-[#BC986A] focus:pl-16 focus:pr-4 placeholder-white" />
+            class=" peer cursor-pointer relative z-10 h-12 w-12 rounded-full border bg-transparent pl-12 outline-none border-white focus:w-full focus:cursor-text focus:border-[#BC986A] focus:pl-16 focus:pr-4 placeholder-white" />
         <svg xmlns="http://www.w3.org/2000/svg" class="absolute inset-y-0 my-auto h-8 w-12 border-r border-transparent stroke-white px-3.5 peer-focus:border-white peer-focus:stroke-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path class="border-[#BC986A]" stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          <path class="border-[#BC986A] " stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
         </svg>
       </form>
       <button @click="openModal" value="add" class="bg-[#4ABC96] text-white font-bold rounded-lg p-3 border-white border-2 w-32 ml-10">Add Movie</button>

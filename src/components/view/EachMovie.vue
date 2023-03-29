@@ -18,6 +18,7 @@ const getOneMovie = async () => {
   }catch(error){
     console.log(`ERROR: ${error}`)
   }
+}
 
 
 // for Delete
@@ -29,6 +30,8 @@ onMounted(async () => {
 let movies = ref('')
 let isConfirmingDelete = ref(false)
 let ShowConfirmDelete = ref(false)
+
+
 
 const DeleteClick = () =>{
       console.log('one more click to Delete');
@@ -55,7 +58,8 @@ const DoubleClickDelete = async (movieID) => {
   }
   }
 }
-}
+
+
 </script>
 
 <template>
