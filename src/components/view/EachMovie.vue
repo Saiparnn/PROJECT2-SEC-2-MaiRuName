@@ -4,7 +4,6 @@ import { useRoute } from 'vue-router';
 import router from '../../router/index.js'
 import Navbar from "../header/Navbar.vue";
 import goToHomePage from '../../composable/goBack.js'
-
 const route = useRoute();
 const id = route.params.id
 const getOneMovie = async () => {
@@ -19,24 +18,43 @@ const getOneMovie = async () => {
   }catch(error){
     console.log(`ERROR: ${error}`)
   }
-}
 
+
+// for Delete
 let oneMovie = ref('')
 onMounted(async () => {
   oneMovie.value = await getOneMovie()
 })
 
 let movies = ref('')
-const deleteMovie = async (movieID) => {
+let isConfirmingDelete = ref(false)
+let ShowConfirmDelete = ref(false)
+
+const DeleteClick = () =>{
+      console.log('one more click to Delete');
+      isConfirmingDelete.value = true;
+      ShowConfirmDelete.value = true;
+      console.log(ShowConfirmDelete);
+      setTimeout(() => {
+        console.log('Cancel Delete');
+        isConfirmingDelete.value = false;
+        ShowConfirmDelete.value = false;
+      }, 3000 ); // wait 3 seconds before resetting
+}
+const DoubleClickDelete = async (movieID) => {
+  if(isConfirmingDelete){
   try{
     const response = await fetch(`http://localhost:3000/movies/${movieID}`, { 
       method: 'DELETE'})
       .then(() => { router.push('/moviebox').then(()=>location.reload()) })
       movies.value=movies.value.filter((movie) => movie.id !== movieID)
+      isConfirmingDelete = false;
   }
   catch(error) {
     console.log(`ERROR: ${error}`);
   }
+  }
+}
 }
 </script>
 
@@ -60,15 +78,17 @@ const deleteMovie = async (movieID) => {
       <p class="mt-2 mb-4"><span class="font-bold mb-4">Writer</span> <br> {{ oneMovie.writer }}</p>
       <p class="mt-2 mb-4"><span class="font-bold mb-4">Star</span> <br> {{ oneMovie.star }}</p>
     </div>
-    <div class="absolute right-0 bottom-0">
-      <button class="bg-red-500 text-white border-2 p-[12px] rounded-lg m-2 " @click="deleteMovie(oneMovie.id)"><span></span>DELETE</button>
-    </div>
-    
+    <div class="absolute right-0 bottom-4" >
+      <button class="bg-red-500 text-white border-2 p-[12px] rounded-lg m-2 w-40" @click="DeleteClick" @dblclick="DoubleClickDelete(oneMovie.id)">
+        <span v-if="isConfirmingDelete==false">Delete</span>
+        <span v-else="isConfirmingDelete==true">Comfirm Delete?</span>
+      </button>
+    </div> 
+    <div class="absolute right-0 bottom-0 mr-4" v-show="ShowConfirmDelete">Wait 3 sec for cancel</div>
   </div>
 </div>    
   
 </template>
 
 <style scoped>
-
 </style>

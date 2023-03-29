@@ -1,4 +1,4 @@
-<script setup>
+v<script setup>
 import getUser from '../../composable/getUser'
 import { ref,onUpdated } from 'vue';
 
@@ -7,6 +7,9 @@ const userNameForSignUp=ref('')
 const passwordForSignUp=ref('')
 const confirmPassword=ref('')
 const loginData =ref([])
+const signupEmpty = ref(false)
+const alreadyused = ref(false)
+const confirmPasswordConfirm = ref(false)
 
 onUpdated (async () => { // ใข้ onupdate เพือจะได้สามารถ login ได้ทันทีเลยเมื่อมีการเพิมค่า user ใน object
   loginData.value = await getUser(); // ทำการใส่ค่า object เข้าไปใน loginData โดยใช้การเรียกใช้ฟังก์ชั่น getUser() ที่มีการ return ค่า
@@ -15,13 +18,22 @@ onUpdated (async () => { // ใข้ onupdate เพือจะได้สา
 const updateUser = async () => {
   const foundUser = loginData.value.find(user => user.userName === userNameForSignUp.value);
   if(foundUser){
-    return alert("This name is already used")
+    signupEmpty.value = false;
+    confirmPasswordConfirm.value =false;
+    alreadyused.value = true;
+    return ;
   }
   if(confirmPassword.value !== passwordForSignUp.value){
-    return alert("Can't register your password and confirmpassword not correct")
+    signupEmpty.value =false;
+    alreadyused.value =false;
+    confirmPasswordConfirm.value =true;
+    return ;
   }
   if(userNameForSignUp.value === '' || passwordForSignUp === '' || confirmPassword === ''){
-    return alert('You should type something. ')
+    alreadyused.value =false;
+    confirmPasswordConfirm.value =false;
+    signupEmpty.value =true;
+    return ;
   }
   if(userNameForSignUp.value !== '' && passwordForSignUp.value !== '' && confirmPassword.value !== ''){
   try {
@@ -33,10 +45,10 @@ const updateUser = async () => {
         passWord: passwordForSignUp.value
       })
     });
-   
     if (res.ok) {
       console.log('Add success');
-      return props.popupTriggers.signUpTrigger = !props.popupTriggers.signUpTrigger
+      alert('Sign up Success!!!');
+      return props.popupTriggers.signUpTrigger = !props.popupTriggers.signUpTrigger ;
     }
      else {
       throw new Error('cannot Add')
@@ -72,6 +84,7 @@ const updateUser = async () => {
                 id="passwordSignup"
                 class="rounded-md w-97 h-16 p-2"/>
             </div>
+            <div v-show="confirmPasswordConfirm" class="text-red-500">Password and ConfirmPassword not match</div>
             <div class="my-4">
                 <p class="text-lg">Confirm your Password</p>
                 <input 
@@ -80,12 +93,13 @@ const updateUser = async () => {
                 id="confirmPassowrd"
                 class="rounded-md w-97 h-16 p-2"/>
             </div>
-            
+            <div v-show="alreadyused" class="text-red-500">This name is already used</div>
+            <div v-show="signupEmpty" class="text-red-500">You should type something...</div>
             <button class="bg-[#99B89C] mt-5 w-96 h-16 rounded-lg text-white text-3xl 
             active:scale-105 ease-in-out duration-300 hover:text-[#BC986A] 
              hover:border hover:border-[#BC986A] " 
             @click="updateUser" type="summit">SIGN UP</button>
-            </div>
+          </div>
         </div>
   </div>
 </div>

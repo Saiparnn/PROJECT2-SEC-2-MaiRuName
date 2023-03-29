@@ -8,6 +8,8 @@ const props = defineProps(['TogglePopup'])
 const userNameForLogin=ref('')
 const passWordForLogin=ref('')
 const loginData=ref([])
+const usernameorpasswordnotcorrect =ref(false)
+const usernameorpasswordEmpty = ref(false)
 
 let popupTriggers = ref({
   loginTrigger : ref(false),
@@ -28,20 +30,26 @@ onUpdated(async () =>{ // ใข้ onupdate เพือจะได้สา�
 const userLogin = async () => {
   const notCorrectUser = loginData.value.includes(user => user.userName !== userNameForLogin.value )
   if(notCorrectUser){
-    return alert('username or password is not correct')
+    usernameorpasswordnotcorrect.value = true;
+    // return alert('username or password is not correct')
   }
   if(userNameForLogin.value === '' || passWordForLogin.value === ''){
-    return alert('You should type something. ')
+    usernameorpasswordEmpty.value = true;
+    usernameorpasswordnotcorrect.value = false;
+    // return alert('You should type something. ')
   }
   if(userNameForLogin.value !== '' && passWordForLogin.value !== ''){
     try {
       const foundUser = loginData.value.find(user => user.userName === userNameForLogin.value && user.passWord === passWordForLogin.value);
       if (foundUser) {
+        // alert('Log in Success!!!')
         router.push('/moviebox')
         console.log('login successfull');
         localStorage.setItem("userName",userNameForLogin.value)
       } else {
-        alert('Username or password is incorrect.') 
+        // alert('Username or password is incorrect.') 
+        usernameorpasswordnotcorrect.value = true;
+        usernameorpasswordEmpty.value = false;
         throw new Error('Username or password is incorrect.') 
       }
     } catch (error) {
@@ -74,8 +82,9 @@ const userLogin = async () => {
           id="passwordLogin"
           v-model.trim="passWordForLogin"/>
         </div>
-         
-        <button @click="userLogin" class="bg-[#99B89C] w-97 h-16 rounded-lg text-white text-3xl active:scale-105 ease-in-out duration-300 hover:text-[#BC986A]  hover:border hover:border-[#BC986A]">LOG IN</button>
+        <div v-show="usernameorpasswordnotcorrect" class="text-red-500">username or password is not correct</div>
+        <div v-show="usernameorpasswordEmpty" class="text-red-500">You should type something...</div>
+        <button @click="userLogin" class="bg-[#99B89C] w-96 h-16 rounded-lg text-white text-3xl active:scale-105 ease-in-out duration-300 hover:text-[#BC986A]  hover:border hover:border-[#BC986A]">LOG IN</button>
         <p class="mt-2">New for MaiRuDuRai? <span ><button @click="TogglePopupSignUp('signUpTrigger')"  
           class="font-bold text-black hover:underline">Sign up now !!!</button> 
           <signup v-if="popupTriggers.signUpTrigger" :TogglePopup="()=>TogglePopup('signUpTrigger')"/>
