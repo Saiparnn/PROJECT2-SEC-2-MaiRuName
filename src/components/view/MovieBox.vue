@@ -111,7 +111,7 @@ const submitData = async () => {
 }
 
 const onEditStatus = (id) => {
-  router.push('/update/'+id)
+  router.push({ name: 'update', params: { id: id } })
 }
 
 const clickMovie = (id) => {

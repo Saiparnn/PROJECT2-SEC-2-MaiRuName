@@ -1,5 +1,5 @@
 <script setup>
-import EmojioneV1AdmissionTickets from "../EmojioneV1AdmissionTickets.vue";
+import EmojioneV1AdmissionTickets from "../icons/EmojioneV1AdmissionTickets.vue";
 import { ref } from "vue"
 import router from '../../router/index.js'
 
