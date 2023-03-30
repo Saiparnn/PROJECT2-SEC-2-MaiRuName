@@ -1,7 +1,7 @@
 <script setup>
 import { onUpdated, ref } from 'vue';
 import getUser from '../../composable/getUser';
-import signup from '../view/signUp.vue';
+import signup from './SignUp.vue';
 import router from '../../router/index.js'
 
 const emits = defineEmits(['closePopup'])
@@ -10,15 +10,8 @@ const props = defineProps([ 'popupTriggers'])
 const userNameForLogin=ref('')
 const passWordForLogin=ref('')
 const loginData=ref([])
-const usernameorpasswordnotcorrect =ref(false)
-const usernameorpasswordEmpty = ref(false)
-
-const TogglePopupSignUp = (trigger) => {
-  if(trigger === 'signUpTrigger'){
-    props.popupTriggers.loginTrigger = false
-  props.popupTriggers.value[trigger] = !props.popupTriggers.value[trigger]
-  }
-}
+const userNameOrPassNotCorrect =ref(false)
+const userNameOrPasswordEmpty = ref(false)
 
 onUpdated(async () =>{ // ใข้ onupdate เพือจะได้สามารถ login ได้ทันทีเลยเมื่อมีการเพิมค่า user ใน object
   loginData.value = await getUser() // ทำการใส่ค่า object เข้าไปใน loginData โดยใช้การเรียกใช้ฟังก์ชั่น getUser() ที่มีการ return ค่า
@@ -27,12 +20,12 @@ onUpdated(async () =>{ // ใข้ onupdate เพือจะได้สา�
 const userLogin = async () => {
   const notCorrectUser = loginData.value.includes(user => user.userName !== userNameForLogin.value )
   if(notCorrectUser){
-    usernameorpasswordnotcorrect.value = true;
+    userNameOrPassNotCorrect.value = true;
     // return alert('username or password is not correct')
   }
   if(userNameForLogin.value === '' || passWordForLogin.value === ''){
-    usernameorpasswordEmpty.value = true;
-    usernameorpasswordnotcorrect.value = false;
+    userNameOrPasswordEmpty.value = true;
+    userNameOrPassNotCorrect.value = false;
     // return alert('You should type something. ')
   }
   if(userNameForLogin.value !== '' && passWordForLogin.value !== ''){
@@ -45,8 +38,8 @@ const userLogin = async () => {
         localStorage.setItem("userName",userNameForLogin.value)
       } else {
         // alert('Username or password is incorrect.') 
-        usernameorpasswordnotcorrect.value = true;
-        usernameorpasswordEmpty.value = false;
+        userNameOrPassNotCorrect.value = true;
+        userNameOrPasswordEmpty.value = false;
         throw new Error('Username or password is incorrect.') 
       }
     } catch (error) {
@@ -79,8 +72,8 @@ const userLogin = async () => {
           id="passwordLogin"
           v-model.trim="passWordForLogin"/>
         </div>
-        <div v-show="usernameorpasswordnotcorrect" class="text-red-500">username or password is not correct</div>
-        <div v-show="usernameorpasswordEmpty" class="text-red-500">You should type something...</div>
+        <div v-show="userNameOrPassNotCorrect" class="text-red-500">username or password is not correct</div>
+        <div v-show="userNameOrPasswordEmpty" class="text-red-500">You should type something...</div>
         <button @click="userLogin" class="bg-[#99B89C] w-96 h-16 rounded-lg text-white text-3xl active:scale-105 ease-in-out duration-300 hover:text-[#BC986A]  hover:border hover:border-[#BC986A]">LOG IN</button>
         <p class="mt-2">New for MaiRuDuRai? <span ><button @click="$emit('closePopup','signUpTrigger')"  
           class="font-bold text-black hover:underline">Sign up now !!!</button> 

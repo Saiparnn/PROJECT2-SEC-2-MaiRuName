@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue';
 import login from './Login.vue'
-import signup from './signUp.vue'
+import signup from './SignUp.vue'
 
 let popupTriggers = ref({
   loginTrigger : ref(false),
