@@ -3,7 +3,9 @@ import getUser from '../../composable/getUser'
 import { ref,onUpdated } from 'vue';
 import router from '../../router';
 
-const props = defineProps(['TogglePopup', 'popupTriggers'])
+const emits = defineEmits(['closePopup'])
+const props = defineProps(['popupTriggers'])
+
 const userNameForSignUp=ref('')
 const passwordForSignUp=ref('')
 const confirmPassword=ref('')
@@ -62,7 +64,6 @@ const updateUser = async () => {
 }
 };
 
-
 </script>
  
 <template>
@@ -71,7 +72,7 @@ const updateUser = async () => {
         <div class="flex items-center justify-center h-screen font-serif text-black/60">
             <div class="bg-[#D9D9D9] w-128 rounded-lg p-10 relative">
             <h1 class="text-5xl mb-6">Sign Up</h1>
-            <img @click="TogglePopup('signUpTrigger')" src="../icons/icons8-close-30.png" class="absolute right-4 top-4 cursor-pointer">
+            <img @click="$emit('closePopup','signUpTrigger')" src="../icons/icons8-close-30.png" class="absolute right-4 top-4 cursor-pointer">
             <div class="my-4">
                 <p class="text-lg">Username</p>
                 <input  v-model.trim="userNameForSignUp" 
