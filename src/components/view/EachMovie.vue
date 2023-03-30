@@ -27,7 +27,6 @@ onMounted(async () => {
   oneMovie.value = await getOneMovie()
 })
 
-let movies = ref('')
 let isConfirmingDelete = ref(false)
 let ShowConfirmDelete = ref(false)
 
@@ -37,7 +36,7 @@ const DeleteClick = () =>{
       ShowConfirmDelete.value = true;
       // console.log(ShowConfirmDelete);
       setTimeout(() => {
-        console.log('Cancel Delete');
+        // console.log('Cancel Delete');
         isConfirmingDelete.value = false;
         ShowConfirmDelete.value = false;
       }, 3000 ); // wait 3 seconds before resetting
@@ -56,7 +55,6 @@ const DoubleClickDelete = async (movieID) => {
   }
   }
 }
-
 
 </script>
 

@@ -4,22 +4,17 @@ import getUser from '../../composable/getUser';
 import signup from '../view/signUp.vue';
 import router from '../../router/index.js'
 
-const props = defineProps(['TogglePopup'])
+const props = defineProps(['TogglePopup', 'popupTriggers'])
 const userNameForLogin=ref('')
 const passWordForLogin=ref('')
 const loginData=ref([])
 const usernameorpasswordnotcorrect =ref(false)
 const usernameorpasswordEmpty = ref(false)
 
-let popupTriggers = ref({
-  loginTrigger : ref(false),
-  signUpTrigger : ref(false)
-})
-
 const TogglePopupSignUp = (trigger) => {
   if(trigger === 'signUpTrigger'){
-    popupTriggers.loginTrigger = false
-  popupTriggers.value[trigger] = !popupTriggers.value[trigger]
+    props.popupTriggers.loginTrigger = false
+  props.popupTriggers.value[trigger] = !props.popupTriggers.value[trigger]
   }
 }
 
@@ -87,7 +82,7 @@ const userLogin = async () => {
         <button @click="userLogin" class="bg-[#99B89C] w-96 h-16 rounded-lg text-white text-3xl active:scale-105 ease-in-out duration-300 hover:text-[#BC986A]  hover:border hover:border-[#BC986A]">LOG IN</button>
         <p class="mt-2">New for MaiRuDuRai? <span ><button @click="TogglePopupSignUp('signUpTrigger')"  
           class="font-bold text-black hover:underline">Sign up now !!!</button> 
-          <signup v-if="popupTriggers.signUpTrigger" :TogglePopup="()=>TogglePopup('signUpTrigger')"/>
+          <signup v-if="props.popupTriggers.signUpTrigger" :TogglePopup="()=>TogglePopup('signUpTrigger')"/>
         </span>
         </p>
 

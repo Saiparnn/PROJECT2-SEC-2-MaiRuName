@@ -3,8 +3,6 @@ import { ref } from 'vue';
 import login from './Login.vue'
 import signup from './signUp.vue'
 
-const props = defineProps(['startApp'])
-
 let popupTriggers = ref({
   loginTrigger : ref(false),
   signUpTrigger : ref(false)
@@ -26,7 +24,7 @@ const TogglePopup = (trigger) => {
       </div>
     </div>
     
-    <login v-if="popupTriggers.loginTrigger" :TogglePopup="()=>TogglePopup('loginTrigger')"/>
+    <login v-if="popupTriggers.loginTrigger" :TogglePopup="()=>TogglePopup('loginTrigger')" :popupTriggers="popupTriggers"/>
     <signup v-if="popupTriggers.signUpTrigger" :TogglePopup="()=>TogglePopup('signUpTrigger')" :popupTriggers="popupTriggers" /> 
      
     <div class="flex bg-[#FBEEC1] h-20 p-2 items-center justify-center absolute inset-x-0 bottom-0 text-white">

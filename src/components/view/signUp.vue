@@ -1,6 +1,7 @@
 <script setup>
 import getUser from '../../composable/getUser'
 import { ref,onUpdated } from 'vue';
+import router from '../../router';
 
 const props = defineProps(['TogglePopup', 'popupTriggers'])
 const userNameForSignUp=ref('')
@@ -46,8 +47,9 @@ const updateUser = async () => {
       })
     });
     if (res.ok) {
-      console.log('Add success');
-      alert('Sign up Success!!!');
+      // console.log('Add success');
+      // alert('Sign up Success!!!');
+      // router.push('/')
       return props.popupTriggers.signUpTrigger = !props.popupTriggers.signUpTrigger ;
     }
      else {
