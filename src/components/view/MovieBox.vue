@@ -200,7 +200,7 @@ let filteredMovies = computed(() => {
                     </div>
                     <div class="font-bold">
                       <label>Category</label>
-                      <input type="text" class="form-control" v-model="movie_category"/>
+                      <input type="text" class="form-control" v-model="movie_category" placeholder="Ex. Actions, Comedy,..."/>
                     </div>
                     <div class="font-bold">
                       <label>StoryLine</label>
@@ -220,7 +220,7 @@ let filteredMovies = computed(() => {
                     </div>
                     <div class="font-bold">
                       <label>ReleaseDate</label>
-                      <input type="text" class="form-control" v-model="movie_releaseDate"/>
+                      <input type="text" class="form-control" v-model="movie_releaseDate" placeholder="DD-MM-YYYY"/>
                     </div>
                     <div class="mt-3">
                       <input type="file" accept="image/*" @change="chooseBinaryFile"/>
