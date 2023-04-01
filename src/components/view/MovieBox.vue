@@ -168,8 +168,8 @@ let filteredMovies = computed(() => {
     </div>
     <div class="h-full min-h-screen  grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-5 gap-8 mt-3 ml-10 mr-10">
       <div v-for="(movie, index) in filteredMovies" :key="index">
-        <img :src="movie.image" class="hover:opacity-80 transition easy-in-out duration-150 rounded-lg mb-2" @click="clickMovie(movie.id)"/>
-        <h2 class="text-white font-bold flex">{{ movie.name }}<span class="pl-2"><img class="w-5" src="../icons/updateIcon.png" @click="onEditStatus(movie.id)"></span></h2>
+        <img :src="movie.image" class="hover:opacity-80 transition easy-in-out duration-150 rounded-lg mb-2 cursor-pointer" @click="clickMovie(movie.id)"/>
+        <h2 class="text-white font-bold flex">{{ movie.name }}<span class="pl-2"><img class="w-5 cursor-pointer" src="../icons/updateIcon.png" @click="onEditStatus(movie.id)"></span></h2>
         <div class="text-white">
           {{ movie.director }} | {{ movie.releaseDate }} <br />
         </div>
@@ -188,7 +188,7 @@ let filteredMovies = computed(() => {
             <div class="modal-content">
               <div class="modal-header bg-gray-200">
                 <h4 class="modal-title text-2xl font-bold">{{ dynamicTitle }}</h4>
-                <img @click="myModel = false" src="../icons/icons8-close-30.png" >
+                <img class="cursor-pointer" @click="myModel = false" src="../icons/icons8-close-30.png" >
               </div>
 
               <div class="modal-body">
