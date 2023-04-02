@@ -7,7 +7,7 @@ This is website about Movie database
 - **search movies** ค้นหาหนังจากชื่อ
 - **add movies, edit movies, delete movies** การเพิ่มหนัง การเเก้ไขหนัง การลบหนัง
 - **search movies from filterCategory** การค้นหาจากประเภทของหนัง 
-link video : https://youtu.be/bgvzKo5l0hA
+link video : https://youtu.be/bgvzKo5l0hA<br>
 <br><br>
 [![My Skills](https://skillicons.dev/icons?i=js,vue,vite,tailwind,css,html,bootstrap,figma,vscode)](https://skillicons.dev)
 
