@@ -1,5 +1,5 @@
 <script setup>
-import { onUpdated, ref } from 'vue';
+import { onMounted, ref } from 'vue';
 import getUser from '../../composable/getUser';
 import signup from './SignUp.vue';
 import router from '../../router/index.js'
@@ -13,7 +13,7 @@ const loginData=ref([])
 const userNameOrPassNotCorrect =ref(false)
 const userNameOrPasswordEmpty = ref(false)
 
-onUpdated(async () =>{ // ใข้ onupdate เพือจะได้สามารถ login ได้ทันทีเลยเมื่อมีการเพิมค่า user ใน object
+onMounted(async () =>{ // ใข้ onupdate เพือจะได้สามารถ login ได้ทันทีเลยเมื่อมีการเพิมค่า user ใน object
   loginData.value = await getUser() // ทำการใส่ค่า object เข้าไปใน loginData โดยใช้การเรียกใช้ฟังก์ชั่น getUser() ที่มีการ return ค่า
 })
 
@@ -21,26 +21,26 @@ const userLogin = async () => {
   const notCorrectUser = loginData.value.includes(user => user.userName !== userNameForLogin.value )
   if(notCorrectUser){
     userNameOrPassNotCorrect.value = true;
-    // return alert('username or password is not correct')
+    return
   }
   if(userNameForLogin.value === '' || passWordForLogin.value === ''){
     userNameOrPasswordEmpty.value = true;
     userNameOrPassNotCorrect.value = false;
-    // return alert('You should type something. ')
+    return
   }
   if(userNameForLogin.value !== '' && passWordForLogin.value !== ''){
     try {
       const foundUser = loginData.value.find(user => user.userName === userNameForLogin.value && user.passWord === passWordForLogin.value);
       if (foundUser) {
-        // alert('Log in Success!!!')
         router.push('/moviebox')
-        // console.log('login successfull');
         localStorage.setItem("userName",userNameForLogin.value)
+        return
       } else {
         // alert('Username or password is incorrect.') 
         userNameOrPassNotCorrect.value = true;
         userNameOrPasswordEmpty.value = false;
         throw new Error('Username or password is incorrect.') 
+        return
       }
     } catch (error) {
       console.log(`Error: ${error}`);
