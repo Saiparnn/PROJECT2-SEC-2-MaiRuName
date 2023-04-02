@@ -36,7 +36,6 @@ const userLogin = async () => {
         localStorage.setItem("userName",userNameForLogin.value)
         return
       } else {
-        // alert('Username or password is incorrect.') 
         userNameOrPassNotCorrect.value = true;
         userNameOrPasswordEmpty.value = false;
         throw new Error('Username or password is incorrect.') 
