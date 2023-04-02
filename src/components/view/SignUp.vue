@@ -1,6 +1,6 @@
 <script setup>
 import getUser from '../../composable/getUser'
-import { ref,onUpdated } from 'vue';
+import { ref,onMounted } from 'vue';
 import router from '../../router';
 
 const emits = defineEmits(['closePopup'])
@@ -14,7 +14,7 @@ const signupEmpty = ref(false)
 const alreadyused = ref(false)
 const confirmPasswordConfirm = ref(false)
 
-onUpdated (async () => { // ใข้ onupdate เพือจะได้สามารถ login ได้ทันทีเลยเมื่อมีการเพิมค่า user ใน object
+onMounted (async () => { // ใข้ onupdate เพือจะได้สามารถ login ได้ทันทีเลยเมื่อมีการเพิมค่า user ใน object
   loginData.value = await getUser(); // ทำการใส่ค่า object เข้าไปใน loginData โดยใช้การเรียกใช้ฟังก์ชั่น getUser() ที่มีการ return ค่า
 });
 
@@ -49,9 +49,6 @@ const updateUser = async () => {
       })
     });
     if (res.ok) {
-      // console.log('Add success');
-      // alert('Sign up Success!!!');
-      // router.push('/')
       return props.popupTriggers.signUpTrigger = !props.popupTriggers.signUpTrigger ;
     }
      else {
