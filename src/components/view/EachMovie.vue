@@ -31,12 +31,9 @@ let isConfirmingDelete = ref(false)
 let ShowConfirmDelete = ref(false)
 
 const DeleteClick = () =>{
-      // console.log('one more click to Delete');
       isConfirmingDelete.value = true;
       ShowConfirmDelete.value = true;
-      // console.log(ShowConfirmDelete);
       setTimeout(() => {
-        // console.log('Cancel Delete');
         isConfirmingDelete.value = false;
         ShowConfirmDelete.value = false;
       }, 3000 ); // wait 3 seconds before resetting
