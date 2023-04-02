@@ -6,8 +6,8 @@ This is website about Movie database
 - **signup, login, logout** การสมัคร การลงชื่อเข้าใช้ การออกจากระบบ
 - **search movies** ค้นหาหนังจากชื่อ
 - **add movies, edit movies, delete movies** การเพิ่มหนัง การเเก้ไขหนัง การลบหนัง
-- **search movies from filterCategory** การค้นหาจากประเภทของหนัง 
-link video : https://youtu.be/bgvzKo5l0hA<br>
+- **search movies from filterCategory** การค้นหาจากประเภทของหนัง <br>
+link video : https://youtu.be/bgvzKo5l0hA
 <br><br>
 [![My Skills](https://skillicons.dev/icons?i=js,vue,vite,tailwind,css,html,bootstrap,figma,vscode)](https://skillicons.dev)
 
