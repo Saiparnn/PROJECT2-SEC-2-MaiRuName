@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, ref } from 'vue';
+import { onUpdated, ref } from 'vue';
 import getUser from '../../composable/getUser';
 import signup from './SignUp.vue';
 import router from '../../router/index.js'
@@ -13,7 +13,7 @@ const loginData=ref([])
 const userNameOrPassNotCorrect =ref(false)
 const userNameOrPasswordEmpty = ref(false)
 
-onMounted(async () =>{ // ใข้ onupdate เพือจะได้สามารถ login ได้ทันทีเลยเมื่อมีการเพิมค่า user ใน object
+onUpdated(async () =>{ // ใข้ onupdate เพือจะได้สามารถ login ได้ทันทีเลยเมื่อมีการเพิมค่า user ใน object
   loginData.value = await getUser() // ทำการใส่ค่า object เข้าไปใน loginData โดยใช้การเรียกใช้ฟังก์ชั่น getUser() ที่มีการ return ค่า
 })
 
