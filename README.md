@@ -7,6 +7,7 @@ This is website about Movie database
 - **search movies** ค้นหาหนังจากชื่อ
 - **add movies, edit movies, delete movies** การเพิ่มหนัง การเเก้ไขหนัง การลบหนัง
 - **search movies from filterCategory** การค้นหาจากประเภทของหนัง <br>
+
 **link video : https://youtu.be/bgvzKo5l0hA**
 <br><br>
 [![My Skills](https://skillicons.dev/icons?i=js,vue,vite,tailwind,css,html,bootstrap,figma,vscode)](https://skillicons.dev)
@@ -20,6 +21,7 @@ This is website about Movie database
 - [**search toggle**](https://play.tailwindcss.com/sbm4jEWJoA)<br>
 - [**Double click to Delete**](https://chat.openai.com/):  chatChatGpt ดูเเนวทางเเล้วนำมาคิดเอง<br>
 
+[**Watch Video Click Here !!!**](https://youtu.be/bgvzKo5l0hA)
 
 ## Theme
 ![RefColor](https://user-images.githubusercontent.com/88131673/229163250-a73cd14c-4839-4498-a902-de40fc13bb11.png)
