@@ -105,7 +105,6 @@ const submitData = async () => {
     }
   }else{
     alertBox.value = true
-    // console.log("fail");
     throw new Error("Cannot Add Movie !!! Form isn't complete")
   }
 }
