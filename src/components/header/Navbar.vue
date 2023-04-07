@@ -43,12 +43,12 @@ const selectGenre = (genre) => {
   <div class="bg-[#659DBD]">
     <div class="flex bg-[#FBEEC1] pt-2 pb-2">
       <div class="ml-5 mt-2">
-        <a href="#" class="flex items-center">
-          <div class=""> <!-- resize icon -->
+        <div class="flex items-center">
+          <div>
             <EmojioneV1AdmissionTickets />
           </div>
-          <router-link to="/moviebox"><span class="self-center font-serif whitespace-nowrap ml-3 mr-4 mt-0.5 text-[#659DBD] font-bold text-2xl">MaiRuDuRai</span></router-link>
-        </a>
+            <router-link to="/moviebox"><span class="self-center font-serif whitespace-nowrap ml-3 mr-4 mt-0.5 text-[#659DBD] font-bold text-2xl">MaiRuDuRai</span></router-link>
+        </div>
       </div>
       <nav class="flex text-[#BC986A] items-center mt-1">
           <router-link to="/moviebox"><div className="menu-item">Home</div></router-link>
