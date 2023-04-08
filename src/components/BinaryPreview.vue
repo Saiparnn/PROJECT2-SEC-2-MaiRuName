@@ -8,13 +8,13 @@ const previewImage = () => {
     const reader = new FileReader();
 
     reader.addEventListener("load", () => {
+      // convert image file to base64 string
       previewSrc.value = reader.result;
     },
     false
   );
 
   if (props.selectedBinaryObject != '') {
-    // convert image file to base64 string
     reader.readAsDataURL(props.selectedBinaryObject);
   }
 }
